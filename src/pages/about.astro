@@ -21,7 +21,7 @@ const skills = ["Rust", "Python", "C++", "Java"];
     <ul>
         <li>My name is {identity.firstName}.</li>
         <li>I live in {identity.country} and I am a {identity.occupation}.</li>
-        {identity.hobbies >= 2 &&
+        {identity.hobbies.length >= 2 &&
             <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
         }
     </ul>
