@@ -8,7 +8,7 @@ const pageTitle = "Tag Index";
 <BaseLayout pageTitle={pageTitle}>
     <div class="flex flex-wrap">
         {tags.map((tag) => (
-            <p class="border border-dotted">
+            <p class="border border-dotted rounded m-1 bg-slate-100 px-2 py-1">
                 <a href={`/tags/${tag}`}>{tag}</a>
             </p>
         ))}
