@@ -7,7 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["JetBrains Mono", ...defaultTheme.fontFamily.sans],
+        'display': ["JetBrains Mono", ...defaultTheme.fontFamily.serif],
+        'body': ["Inter var", "monospace"],
+      },
+      colors: {
+        'text': '#e6eeea',
+        'background': '#070a09',
+        'primary': '#afcbbd',
+        'secondary': '#416264',
+        'accent': '#7096a1',
       },
     },
   },

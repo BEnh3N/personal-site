@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Button from "../components/Button.astro";
+import Tag from "../components/Tag.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -15,25 +15,16 @@ const { frontmatter } = Astro.props;
                 class="drop-shadow"
             />
         </div>
-        <div class="m-2">
-            <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
+        <div class="m-2 font-display">
+            <p class="font-bold text-5xl drop-shadow">
+                {frontmatter.title}
+            </p>
             <p class="italic">{frontmatter.description}</p>
             <p>{frontmatter.pubDate.slice(0, 10)}</p>
 
             <p>Written by: {frontmatter.author}</p>
             <div class="flex flex-wrap space-x-2 mt-2">
-                {
-                    frontmatter.tags.map((tag: string) => (
-                        // <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-                        <Button
-                            url={`/tags/${tag}`}
-                            color="slate-200"
-                            hover_color="slate-300"
-                        >
-                            {tag}
-                        </Button>
-                    ))
-                }
+                {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
             </div>
         </div>
     </div>
