@@ -1,0 +1,10 @@
+---
+const { url, color, hover_color, extra_props } = Astro.props;
+console.log(color);
+---
+
+<button
+    class={`rounded drop-shadow py-1 px-2 bg-${color} hover:bg-${hover_color} ${extra_props}`}
+>
+    <a href={url}><slot /></a>
+</button>

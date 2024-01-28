@@ -1,9 +1,16 @@
 ---
+import Button from "./Button.astro";
 const { platform, username } = Astro.props;
 ---
 
-<a class="rounded bg-slate-500 text-white py-1 px-2 capitalize"
-href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<!-- <a class="rounded bg-slate-500 text-white py-1 px-2 capitalize"
+href={`https://www.${platform}.com/${username}`}>{platform}</a> -->
+<Button
+    url={`https://www.${platform}.com/${username}`}
+    color="slate-500"
+    hover_color="slate-900"
+    extra_props="capitalize text-white">{platform}</Button
+>
 
 <!-- <style>
     a {
