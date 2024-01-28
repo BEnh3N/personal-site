@@ -1,23 +1,25 @@
 ---
 // import '../styles/global.css'
-import "bootstrap/dist/css/bootstrap.min.css"
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
 </head>
-<body>
+<body class="bg-white">
 <Header />
-<h1>{pageTitle}</h1>
+<h1 class="font-bold text-4xl">{pageTitle}</h1>
 <slot />
 <Footer />
 
@@ -26,7 +28,3 @@ const { pageTitle } = Astro.props;
 </script>
 </body>
 </html>
-
-<script>
-    import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-</script>
