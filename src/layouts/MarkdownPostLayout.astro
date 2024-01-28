@@ -6,31 +6,31 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <div class="flex mb-4">
-        <div>
-            <img
-                src={frontmatter.image.url}
-                width="400"
-                alt={frontmatter.image.alt}
-                class="drop-shadow"
-            />
-        </div>
-        <div class="m-2 font-display">
-            <p class="font-bold text-5xl drop-shadow">
-                {frontmatter.title}
-            </p>
-            <p class="italic">{frontmatter.description}</p>
-            <p>{frontmatter.pubDate.slice(0, 10)}</p>
-
-            <p>Written by: {frontmatter.author}</p>
-            <div class="flex flex-wrap space-x-2 mt-2">
-                {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
-            </div>
-        </div>
-    </div>
+  <div class="mb-4 flex">
     <div>
-        <slot />
+      <img
+        src={frontmatter.image.url}
+        width="400"
+        alt={frontmatter.image.alt}
+        class="drop-shadow"
+      />
     </div>
+    <div class="m-2 font-display">
+      <p class="text-5xl font-bold drop-shadow">
+        {frontmatter.title}
+      </p>
+      <p class="italic">{frontmatter.description}</p>
+      <p>{frontmatter.pubDate.slice(0, 10)}</p>
+
+      <p>Written by: {frontmatter.author}</p>
+      <div class="mt-2 flex flex-wrap space-x-2">
+        {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
+      </div>
+    </div>
+  </div>
+  <div>
+    <slot />
+  </div>
 </BaseLayout>
 
 <!-- <style>
