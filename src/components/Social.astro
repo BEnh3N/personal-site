@@ -3,6 +3,6 @@ const { platform, username } = Astro.props;
 ---
 
 <a
-  class="rounded bg-secondary px-2 py-1 font-display capitalize text-text hover:-translate-y-0.5"
+  class="rounded-md bg-accent px-4 py-2 font-display text-sm text-background active:scale-95"
   href={`https://www.${platform}.com/${username}`}>{platform}</a
 >

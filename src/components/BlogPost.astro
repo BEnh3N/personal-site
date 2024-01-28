@@ -1,5 +1,19 @@
 ---
-const { url, title } = Astro.props;
+const { post } = Astro.props;
+const frontmatter = post.frontmatter;
 ---
 
-<li><a href={url}>{title}</a></li>
+<a href={post.url}>
+  <div
+    class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95"
+  >
+    <img
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      width="300"
+      class="rounded-md"
+    />
+    <p>{frontmatter.title}</p>
+    <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
+  </div>
+</a>

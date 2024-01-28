@@ -16,14 +16,14 @@ const { frontmatter } = Astro.props;
       />
     </div>
     <div class="m-2 font-display">
-      <p class="text-5xl font-bold drop-shadow">
+      <p class="text-5xl font-bold">
         {frontmatter.title}
       </p>
       <p class="italic">{frontmatter.description}</p>
-      <p>{frontmatter.pubDate.slice(0, 10)}</p>
+      <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
 
-      <p>Written by: {frontmatter.author}</p>
-      <div class="mt-2 flex flex-wrap space-x-2">
+      <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
+      <div class="mt-2 flex flex-wrap gap-2">
         {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
     </div>
