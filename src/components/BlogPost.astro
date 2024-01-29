@@ -3,17 +3,18 @@ const { post } = Astro.props;
 const frontmatter = post.frontmatter;
 ---
 
-<a href={post.url}>
-  <div
-    class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95"
-  >
-    <img
-      src={frontmatter.image.url}
-      alt={frontmatter.image.alt}
-      width="300"
-      class="rounded-md"
-    />
+<div
+  class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95 w-80 grow"
+>
+  <a href={post.url}>
+    <div class="aspect-video">
+      <img
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+        class="rounded-md object-fill"
+      />
+    </div>
     <p>{frontmatter.title}</p>
     <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
-  </div>
-</a>
+  </a>
+</div>
