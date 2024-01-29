@@ -17,8 +17,10 @@ export default {
         'accent-subtext': 'rgb(110, 110, 110)',
         'accent-highlight': 'rgba(225, 225, 225, 4%)',
         'accent-hover': 'rgb(30, 30, 30)',
+        'accent-hover-transparent': 'rgba(48, 48, 48, .5)',
         'accent-button': 'rgb(25, 25, 25)',
         'accent-button-elevated': 'rgb(42, 42, 42)',
+        'glass': 'rgba(25, 25, 25, 0.85)',
       },
       boxShadow: {
         'border': 'inset 0 0 0 1.6px rgba(225, 225, 225, 4%)',

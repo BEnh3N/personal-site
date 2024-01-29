@@ -2,48 +2,50 @@
 import Greeting from "./Greeting";
 ---
 
-<div
-  class="m-2 flex items-center justify-between rounded-lg bg-accent-button p-1 shadow-header"
->
-  <!-- Home Icon -->
-  <div class="mx-2 justify-self-start">
-    <a aria-label="Home" href="/">
-      <img
-        src="/favicon.svg"
-        alt="Home Icon"
-        class="h-10 min-h-10 transition-transform hover:rotate-6 hover:scale-110"
+<header class="sticky top-0 w-screen p-2">
+  <div
+    class="bg-glass z-50 flex items-center justify-between rounded-lg p-1 shadow-header backdrop-blur"
+  >
+    <!-- Home Icon -->
+    <div class="mx-2 justify-self-start">
+      <a aria-label="Home" href="/">
+        <img
+          src="/favicon.svg"
+          alt="Home Icon"
+          class="h-10 min-h-10 transition-transform hover:rotate-6 hover:scale-110"
+        />
+      </a>
+    </div>
+
+    <div class="hidden lg:flex">
+      <Greeting
+        client:load
+        messages={[
+          "experience the greatest website to ever exist",
+          "web dev is way too hard",
+          "help",
+          '"if you wait until the last minute, it only takes a minute to do"',
+        ]}
       />
-    </a>
-  </div>
+    </div>
 
-  <div class="hidden justify-center object-center lg:flex">
-    <Greeting
-      client:load
-      messages={[
-        "experience the greatest website to ever exist",
-        "web dev is way too hard",
-        "help",
-        '"if you wait until the last minute, it only takes a minute to do"',
-      ]}
-    />
+    <!-- Nav Links -->
+    <div class="flex font-display text-lg">
+      <a
+        href="/about"
+        class="hover:bg-accent-hover-transparent rounded-md px-5 py-2 font-display hover:shadow-border active:scale-95"
+        >about</a
+      >
+      <a
+        href="/blog"
+        class="hover:bg-accent-hover-transparent rounded-md px-5 py-2 font-display hover:shadow-border active:scale-95"
+        >blog</a
+      >
+      <a
+        href="/tags"
+        class="hover:bg-accent-hover-transparent rounded-md px-5 py-2 font-display hover:shadow-border active:scale-95"
+        >tags</a
+      >
+    </div>
   </div>
-
-  <!-- Nav Links -->
-  <div class="flex font-display text-lg">
-    <a
-      href="/about"
-      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
-      >about</a
-    >
-    <a
-      href="/blog"
-      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
-      >blog</a
-    >
-    <a
-      href="/tags"
-      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
-      >tags</a
-    >
-  </div>
-</div>
+</header>
