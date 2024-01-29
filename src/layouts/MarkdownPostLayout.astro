@@ -7,15 +7,14 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="mb-4 flex">
-    <div>
+    <div class="aspect-video m-2">
       <img
         src={frontmatter.image.url}
-        width="400"
         alt={frontmatter.image.alt}
-        class="drop-shadow"
+        class="rounded-md object-cover h-full w-96"
       />
     </div>
-    <div class="m-2 font-display">
+    <div class="m-2 font-display flex flex-col justify-center">
       <p class="text-5xl font-bold">
         {frontmatter.title}
       </p>
