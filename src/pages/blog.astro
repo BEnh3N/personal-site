@@ -7,7 +7,11 @@ const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p class="font-display text-5xl font-bold">Blog</p>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <BlogGrid posts={allPosts} />
+  <div class="px-2">
+    <p class="font-display text-5xl font-bold">Blog</p>
+    <p class="font-display italic text-accent-subtext">
+      Nobody wants to read this
+    </p>
+    <BlogGrid posts={allPosts} />
+  </div>
 </BaseLayout>

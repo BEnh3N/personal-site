@@ -6,29 +6,30 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="mb-4 flex">
-    <div class="aspect-video m-2">
-      <img
-        src={frontmatter.image.url}
-        alt={frontmatter.image.alt}
-        class="rounded-md object-cover h-full w-96"
-      />
-    </div>
-    <div class="m-2 font-display flex flex-col justify-center">
-      <p class="text-5xl font-bold">
-        {frontmatter.title}
-      </p>
-      <p class="italic">{frontmatter.description}</p>
-      <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
-
-      <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
-      <div class="mt-2 flex flex-wrap gap-2">
-        {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
+  <div class="px-2">
+    <div class="mb-4 flex flex-col md:flex-row">
+      <div class="aspect-video md:w-2/5">
+        <img
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+          class="rounded-md object-cover"
+        />
+      </div>
+      <div class="flex flex-col justify-center pt-2 font-display md:px-4">
+        <p class="text-3xl font-bold md:text-4xl">
+          {frontmatter.title}
+        </p>
+        <p class="italic">{frontmatter.description}</p>
+        <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
+        <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
+        </div>
       </div>
     </div>
-  </div>
-  <div>
-    <slot />
+    <div>
+      <slot />
+    </div>
   </div>
 </BaseLayout>
 
