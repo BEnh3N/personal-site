@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Social from "../components/Social.astro";
+import SpinningWord from "../components/SpinningWord.astro";
 const pageTitle = "Home Page";
 ---
 
@@ -11,13 +12,21 @@ const pageTitle = "Home Page";
   >
     <img src="/favicon.svg" class="w-4/5 sm:w-2/5" />
     <div
-      class="flex flex-col justify-center gap-2 px-4 text-center font-display sm:w-2/5 sm:text-left"
+      class="flex flex-col justify-center gap-0 px-4 text-center font-display sm:w-2/5 sm:px-0 sm:text-start"
     >
       <p class="text-6xl font-bold lg:text-8xl">BEnh3N</p>
-      <p class="text-xl">
-        Hello! I'm Bennett, a student, programmer, and enthusiast of many
-        things!
-      </p>
+      <p class="text-xl">Hello, my name is Bennett!</p>
+      <div class="flex text-xl">
+        <p>I'm a</p>
+        <div class="h-7 flex-nowrap overflow-hidden pl-3">
+          <SpinningWord>programmer</SpinningWord>
+          <SpinningWord>photographer</SpinningWord>
+          <SpinningWord>musician</SpinningWord>
+          <SpinningWord>gamer</SpinningWord>
+          <SpinningWord>student</SpinningWord>
+        </div>
+      </div>
+      <p class="text-end text-xl sm:text-start">...and much more</p>
       <div class="flex justify-center gap-2 pt-2 sm:justify-start">
         <Social platform="twitter" username="BEnh3N" />
         <Social platform="github" username="BEnh3N" />

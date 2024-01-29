@@ -26,6 +26,47 @@ export default {
         'border': 'inset 0 0 0 1.6px rgba(225, 225, 225, 4%)',
         'header': 'rgba(25, 25, 25, 0.85) 0px 0px 0px 3.2px inset, rgba(48, 48, 48, .5) 0px 0px 20px 0px'
       },
+      keyframes: {
+        spin_words: {
+          '15%': {
+            transform: 'translateY(0%)'
+          },
+          '20%': {
+            transform: 'translateY(-100%)'
+          },
+
+          '35%': {
+            transform: 'translateY(-100%)'
+          },
+          '40%': {
+            transform: 'translateY(-200%)'
+          },
+
+          '55%': {
+            transform: 'translateY(-200%)'
+          },
+          '60%': {
+            transform: 'translateY(-300%)'
+          },
+
+          '75%': {
+            transform: 'translateY(-300%)'
+          },
+          '80%': {
+            transform: 'translateY(-400%)'
+          },
+
+          '95%': {
+            transform: 'translateY(-400%)'
+          },
+          '100%': {
+            transform: 'translateY(0%)'
+          },
+        },
+      },
+      animation: {
+        'word-spin': 'spin_words 10s ease-in-out infinite'
+      }
     },
   },
   plugins: [],
