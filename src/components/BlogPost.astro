@@ -4,7 +4,7 @@ const frontmatter = post.frontmatter;
 ---
 
 <div
-  class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95 w-full"
+  class="bg-accent-button hover:bg-accent-button-elevated hover:scale-95 transition-transform shadow-border rounded-md p-2 font-display active:scale-95 w-full"
 >
   <a href={post.url}>
     <div class="aspect-video mb-2">
@@ -14,7 +14,7 @@ const frontmatter = post.frontmatter;
         class="rounded-md object-cover h-full"
       />
     </div>
-    <p>{frontmatter.title}</p>
+    <p class="text-lg">{frontmatter.title}</p>
     <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
   </a>
 </div>

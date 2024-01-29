@@ -21,7 +21,8 @@ export default {
         'accent-button-elevated': 'rgb(42, 42, 42)',
       },
       boxShadow: {
-        'border': 'inset 0 0 0 1.6px rgba(225, 225, 225, 4%)'
+        'border': 'inset 0 0 0 1.6px rgba(225, 225, 225, 4%)',
+        'header': 'rgba(25, 25, 25, 0.85) 0px 0px 0px 3.2px inset, rgba(48, 48, 48, 0.5) 0px 0px 20px 0px'
       },
     },
   },

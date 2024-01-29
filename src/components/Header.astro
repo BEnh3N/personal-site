@@ -1,11 +1,40 @@
 ---
-import Navigation from "./Navigation.astro";
 import Hamburger from "./Hamburger.astro";
 ---
 
-<header>
-  <nav>
-    <Hamburger />
-    <Navigation />
-  </nav>
+<header class="bg-accent-button shadow-header rounded-lg m-2">
+  <div class="grid grid-cols-3 p-1 items-center">
+    <!-- Home Icon -->
+    <a class="block px-2" href="/">
+      <img
+        src="/favicon.svg"
+        class="h-10 hover:rotate-6 hover:scale-110 transition-transform"
+      />
+    </a>
+
+    <div class="justify-self-center">
+      <p class="font-display text-accent-subtext text-sm">
+        experience the greatest website to ever exist
+      </p>
+    </div>
+
+    <!-- Nav Links -->
+    <div class="font-display flex text-lg justify-self-end">
+      <a
+        href="/about"
+        class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+        >about</a
+      >
+      <a
+        href="/blog"
+        class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+        >blog</a
+      >
+      <a
+        href="/tags"
+        class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+        >tags</a
+      >
+    </div>
+  </div>
 </header>
