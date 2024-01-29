@@ -3,20 +3,20 @@ import Greeting from "./Greeting";
 ---
 
 <div
-  class="relative flex p-1 items-center justify-between bg-accent-button shadow-header rounded-lg m-2"
+  class="m-2 flex items-center justify-between rounded-lg bg-accent-button p-1 shadow-header"
 >
   <!-- Home Icon -->
-  <div class="block mx-2 justify-self-start">
+  <div class="mx-2 justify-self-start">
     <a aria-label="Home" href="/">
       <img
         src="/favicon.svg"
         alt="Home Icon"
-        class="h-10 hover:rotate-6 hover:scale-110 transition-transform"
+        class="h-10 min-h-10 transition-transform hover:rotate-6 hover:scale-110"
       />
     </a>
   </div>
 
-  <div class="flex absolute inset-x-8 justify-center invisible lg:visible">
+  <div class="hidden justify-center object-center lg:flex">
     <Greeting
       client:load
       messages={[
@@ -29,20 +29,20 @@ import Greeting from "./Greeting";
   </div>
 
   <!-- Nav Links -->
-  <div class="font-display flex text-lg">
+  <div class="flex font-display text-lg">
     <a
       href="/about"
-      class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
       >about</a
     >
     <a
       href="/blog"
-      class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
       >blog</a
     >
     <a
       href="/tags"
-      class="bg-accent-button hover:bg-accent-hover font-display hover:shadow-border rounded-md px-4 py-2 active:scale-95"
+      class="rounded-md bg-accent-button px-4 py-2 font-display hover:bg-accent-hover hover:shadow-border active:scale-95"
       >tags</a
     >
   </div>
