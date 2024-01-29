@@ -4,20 +4,19 @@ import Greeting from "./Greeting";
 
 <header class="sticky top-0 p-1">
   <div
-    class="z-50 flex h-12 items-center justify-between rounded-lg bg-glass px-0.5 shadow-header backdrop-blur"
+    class="z-50 flex h-12 items-center justify-between rounded-md bg-glass shadow-header backdrop-blur"
   >
     <!-- Home Icon -->
-    <div class="mx-2 justify-self-start">
-      <a aria-label="Home" href="/">
-        <img
-          src="/favicon.svg"
-          alt="Home Icon"
-          class="h-10 min-h-10 transition-transform hover:rotate-6 hover:scale-110"
-        />
-      </a>
-    </div>
+    <a aria-label="Home" href="/" class="shrink-0 pl-1.5">
+      <img
+        src="/favicon.svg"
+        alt="Home Icon"
+        class="h-10 transition-transform hover:-rotate-6 hover:scale-110"
+      />
+    </a>
 
-    <div class="hidden lg:flex">
+    <!-- Center greeting -->
+    <div class="hidden lg:block">
       <Greeting
         client:load
         messages={[
@@ -30,12 +29,12 @@ import Greeting from "./Greeting";
     </div>
 
     <!-- Nav Links -->
-    <div class="flex font-display text-lg">
-      <a
+    <div class="mr-0.5 flex shrink-0 font-display text-lg">
+      <!-- <a
         href="/about"
         class="rounded-md px-5 py-2 font-display hover:bg-accent-hover-transparent hover:shadow-border"
         >about</a
-      >
+      > -->
       <a
         href="/blog"
         class="rounded-md px-5 py-2 font-display hover:bg-accent-hover-transparent hover:shadow-border"
