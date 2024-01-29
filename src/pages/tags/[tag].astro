@@ -27,9 +27,12 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <div class="flex flex-wrap items-baseline justify-center">
-    <p class="pr-2">Posts tagged with</p>
-    <Tag tag={tag} />
+  <div class="px-2 pt-1">
+    <div class="flex flex-wrap items-baseline pb-2 pl-2 font-display">
+      <p class="pr-2">All posts tagged with</p>
+      <Tag tag={tag} />
+    </div>
+
+    <BlogGrid posts={posts} />
   </div>
-  <BlogGrid posts={posts} />
 </BaseLayout>

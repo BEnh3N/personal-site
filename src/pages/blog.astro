@@ -1,17 +1,17 @@
 ---
 import BlogGrid from "../components/BlogGrid.astro";
-import BlogPost from "../components/BlogPost.astro";
+import Tag from "../components/Tag.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="px-2">
-    <p class="font-display text-5xl font-bold">Blog</p>
-    <p class="font-display italic text-accent-subtext">
-      Nobody wants to read this
-    </p>
+  <div class="px-2 pt-1">
+    <div class="flex flex-wrap gap-2 pb-2">
+      {tags.map((tag) => <Tag tag={tag} />)}
+    </div>
     <BlogGrid posts={allPosts} />
   </div>
 </BaseLayout>
