@@ -26,11 +26,13 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <div class="flex flex-wrap place-items-center">
+  <div class="flex flex-wrap items-baseline justify-center">
     <p class="pr-2">Posts tagged with</p>
     <Tag tag={tag} />
   </div>
-  <div class="flex flex-wrap mt-2">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 m-2"
+  >
     {posts.map((post) => <BlogPost post={post} />)}
   </div>
 </BaseLayout>

@@ -4,14 +4,14 @@ const frontmatter = post.frontmatter;
 ---
 
 <div
-  class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95 w-80 grow"
+  class="bg-accent-button hover:bg-accent-button-elevated shadow-border rounded-md p-2 font-display active:scale-95 w-full"
 >
   <a href={post.url}>
-    <div class="aspect-video">
+    <div class="aspect-video mb-2">
       <img
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
-        class="rounded-md object-fill"
+        class="rounded-md object-cover h-full"
       />
     </div>
     <p>{frontmatter.title}</p>
