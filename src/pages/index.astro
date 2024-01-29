@@ -10,15 +10,20 @@ const pageTitle = "Home Page";
   <div
     class="-mt-14 flex h-dvh flex-col items-center justify-evenly pt-14 sm:flex-row"
   >
-    <img src="/favicon.svg" class="w-4/5 sm:w-2/5" />
+    <!-- Logo -->
+    <img src="/favicon.svg" alt="logo" class="w-4/5 sm:w-2/5" />
+
+    <!-- Text -->
     <div
-      class="flex flex-col justify-center gap-0 px-4 text-center font-display sm:w-2/5 sm:px-0 sm:text-start"
+      class="text-md flex flex-col justify-center gap-0 px-4 text-center font-display sm:w-2/5 sm:px-0 sm:text-start lg:text-xl"
     >
-      <p class="text-6xl font-bold lg:text-8xl">BEnh3N</p>
-      <p class="text-xl">Hello, my name is Bennett!</p>
-      <div class="flex text-xl">
+      <p class="text-7xl font-bold lg:text-8xl">BEnh3N</p>
+      <p>Hello, my name is Bennett!</p>
+
+      <!-- Spinny Text line -->
+      <div class="flex">
         <p>I'm a</p>
-        <div class="h-7 flex-nowrap overflow-hidden pl-3">
+        <div class="h-6 overflow-hidden pl-3 lg:h-7">
           <SpinningWord>programmer</SpinningWord>
           <SpinningWord>photographer</SpinningWord>
           <SpinningWord>musician</SpinningWord>
@@ -26,13 +31,13 @@ const pageTitle = "Home Page";
           <SpinningWord>student</SpinningWord>
         </div>
       </div>
-      <p class="text-end text-xl sm:text-start">...and much more</p>
-      <div class="flex justify-center gap-2 pt-2 sm:justify-start">
+
+      <p class="text-end sm:text-start">...and much more</p>
+      <div class="flex justify-center gap-2 pt-2 text-sm sm:justify-start">
         <Social platform="twitter" username="BEnh3N" />
         <Social platform="github" username="BEnh3N" />
         <Social platform="youtube" username="@BEnh3N" />
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </BaseLayout>

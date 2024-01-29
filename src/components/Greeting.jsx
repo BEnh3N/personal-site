@@ -6,6 +6,6 @@ export default function Greeting({ messages }) {
     const [greeting, setGreeting] = useState(messages[0])
 
     return (
-        <button class="font-display text-accent-subtext text-sm text-nowrap" onClick={() => setGreeting(randomMessage())}>{greeting}</button>
+        <button class="font-display italic text-accent-subtext text-sm" onClick={() => setGreeting(randomMessage())}>{greeting}</button>
     );
 }
