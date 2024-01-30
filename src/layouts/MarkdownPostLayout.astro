@@ -20,7 +20,9 @@ const { frontmatter } = Astro.props;
           {frontmatter.title}
         </p>
         <p class="italic">{frontmatter.description}</p>
-        <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
+        <p class="text-accent-subtext">
+          {frontmatter.pubDate.toString().slice(4, 15)}
+        </p>
         <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
         <div class="flex flex-wrap gap-2 pt-1">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}

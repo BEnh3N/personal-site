@@ -4,10 +4,6 @@ export default function Greeting({ messages }) {
     const randomMessage = () => messages[Math.floor(Math.random() * messages.length)];
     const [greeting, setGreeting] = useState(messages[0]);
 
-    console.log(greeting)
-
-    // setGreeting(randomMessage());
-
     return (
         <button class="font-display italic text-accent-subtext text-sm" onClick={() => {
             var new_greeting;

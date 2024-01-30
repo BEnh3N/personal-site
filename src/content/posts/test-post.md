@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "gnrsjkgbjrshgbsegser"
 pubDate: 2024-01-30
 description: "woh woh"

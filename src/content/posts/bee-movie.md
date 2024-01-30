@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Blog Post Test"
 pubDate: 2024-01-27
 description: "This is a test of the blog post formatting"

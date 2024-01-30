@@ -1,12 +1,12 @@
 ---
 const { post } = Astro.props;
-const frontmatter = post.frontmatter;
+const frontmatter = post.data;
 ---
 
 <div
   class="w-full rounded-md bg-accent-button p-2 font-display shadow-border transition-all hover:bg-accent-button-elevated active:scale-95"
 >
-  <a href={post.url}>
+  <a href={`/posts/${post.slug}/`}>
     <div class="mb-2 aspect-video">
       <img
         src={frontmatter.image.url}
@@ -15,6 +15,8 @@ const frontmatter = post.frontmatter;
       />
     </div>
     <p class="text-lg">{frontmatter.title}</p>
-    <p class="text-accent-subtext">{frontmatter.pubDate.slice(0, 10)}</p>
+    <p class="text-accent-subtext">
+      {frontmatter.pubDate.toString().slice(4, 15)}
+    </p>
   </a>
 </div>
