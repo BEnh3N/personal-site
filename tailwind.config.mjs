@@ -27,45 +27,45 @@ export default {
         'header': '0 0 0 0.2rem rgba(25, 25, 25, 0.85) inset, 0 0 20px 0 rgba(48, 48, 48, .5)',
       },
       keyframes: {
-        spin_words: {
-          '15%': {
+        wordspin: {
+          '18%': {
             transform: 'translateY(0%)'
           },
           '20%': {
             transform: 'translateY(-100%)'
           },
 
-          '35%': {
+          '38%': {
             transform: 'translateY(-100%)'
           },
           '40%': {
             transform: 'translateY(-200%)'
           },
 
-          '55%': {
+          '58%': {
             transform: 'translateY(-200%)'
           },
           '60%': {
             transform: 'translateY(-300%)'
           },
 
-          '75%': {
+          '78%': {
             transform: 'translateY(-300%)'
           },
           '80%': {
             transform: 'translateY(-400%)'
           },
 
-          '95%': {
+          '98%': {
             transform: 'translateY(-400%)'
           },
           '100%': {
-            transform: 'translateY(0%)'
+            transform: 'translateY(-500%)'
           },
         },
       },
       animation: {
-        'word-spin': 'spin_words 10s ease-in-out infinite'
+        'word-spin': 'wordspin 10s ease-in-out infinite'
       }
     },
   },
