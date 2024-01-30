@@ -1,6 +1,6 @@
 ---
 // import '../styles/global.css'
-import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 
 const { pageTitle } = Astro.props;
@@ -20,7 +20,9 @@ const { pageTitle } = Astro.props;
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-background text-accent">
     <Header />
