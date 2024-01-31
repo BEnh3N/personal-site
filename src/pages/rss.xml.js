@@ -7,7 +7,6 @@ export async function GET(context) {
     title: "BEnh3N Blog",
     description: "The greatest blog to ever exist",
     site: context.site,
-    // items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
