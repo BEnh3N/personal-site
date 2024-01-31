@@ -11,7 +11,9 @@ const pageTitle = "Home Page";
     class="-mt-14 flex h-dvh flex-col items-center justify-evenly pt-14 sm:flex-row"
   >
     <!-- Logo -->
-    <img src="/favicon.svg" alt="logo" class="w-4/5 sm:w-2/5" />
+    <div class="w-4/5 transition-all sm:w-2/5">
+      <img src="/favicon.svg" alt="logo" />
+    </div>
 
     <!-- Text -->
     <div
@@ -34,7 +36,9 @@ const pageTitle = "Home Page";
       </div>
 
       <p class="text-end sm:text-start">...and much more</p>
-      <div class="flex justify-center gap-2 pt-2 text-sm sm:justify-start">
+      <div
+        class="flex justify-center gap-2 pt-2 text-sm sm:justify-start lg:text-lg"
+      >
         <Social platform="twitter" username="BEnh3N" />
         <Social platform="github" username="BEnh3N" />
         <Social platform="youtube" username="@BEnh3N" />
