@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BlogGrid from "../components/BlogGrid.astro";
-import TagButton from "../components/TagButton.astro";
+import Tag from "../components/Tag.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
@@ -11,7 +11,7 @@ const pageTitle = "Blog";
 <BaseLayout pageTitle={pageTitle}>
   <div class="px-2 pt-1">
     <div class="flex flex-wrap gap-2 pb-2">
-      {tags.map((tag) => <TagButton tag={tag} />)}
+      {tags.map((tag) => <Tag tag={tag} />)}
     </div>
     <BlogGrid posts={allPosts} />
   </div>
