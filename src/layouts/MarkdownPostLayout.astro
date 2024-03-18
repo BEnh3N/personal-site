@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Tag from "../components/Tag.astro";
+import TagButton from "../components/TagButton.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -25,7 +25,7 @@ const { frontmatter } = Astro.props;
         </p>
         <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
         <div class="flex flex-wrap gap-2 pt-1">
-          {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
+          {frontmatter.tags.map((tag: string) => <TagButton tag={tag} />)}
         </div>
       </div>
     </div>

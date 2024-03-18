@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Tag from "../../components/Tag.astro";
+import TagButton from "../../components/TagButton.astro";
 import BlogGrid from "../../components/BlogGrid.astro";
 import { getCollection } from "astro:content";
 
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag: string) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag),
+      post.data.tags.includes(tag)
     );
     return {
       params: { tag },
@@ -30,7 +30,7 @@ const { posts } = Astro.props;
   <div class="px-2 pt-1">
     <div class="flex flex-wrap items-baseline pb-2 pl-2 font-display">
       <p class="pr-2">All posts tagged with</p>
-      <Tag tag={tag} />
+      <TagButton tag={tag} />
     </div>
 
     <BlogGrid posts={posts} />
