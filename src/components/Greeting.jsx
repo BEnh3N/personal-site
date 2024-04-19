@@ -1,16 +1,23 @@
 import { useState } from "preact/hooks";
 
+let index = 0;
+
 export default function Greeting({ messages }) {
-    const randomMessage = () => messages[Math.floor(Math.random() * messages.length)];
-    const [greeting, setGreeting] = useState(messages[0]);
+    const randomMessage = () => {
+        index = Math.floor(Math.random() * messages.length);
+        return messages[index];
+    }
+    const [greeting, setGreeting] = useState(() => messages[index]);
+
+    function updateGreeting() {
+        var new_greeting;
+        do {
+            new_greeting = randomMessage();
+        } while (new_greeting == greeting);
+        setGreeting(new_greeting);
+    }
 
     return (
-        <button class="font-display italic text-accent-subtext text-sm" onClick={() => {
-            var new_greeting;
-            do {
-                new_greeting = randomMessage();
-            } while (new_greeting == greeting);
-            setGreeting(new_greeting);
-        }}>{greeting}</button>
+        <button class="italic text-gray-500 truncate" onClick={() => updateGreeting()}>// {greeting}</button>
     );
 }

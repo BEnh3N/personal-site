@@ -1,49 +1,36 @@
 ---
 import Greeting from "./Greeting";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="sticky top-0 p-1">
+<header
+  class="fixed top-0 z-50 flex h-10 w-screen border-b border-dashed border-gray-500 bg-white dark:bg-black"
+>
+  <div class="mx-4 my-auto flex h-min gap-4 underline">
+    <a href="/">home</a>
+    <a href="/blog">blog</a>
+    <a href="/portfolio">portfolio</a>
+  </div>
+
+  <div class="mx-4 my-auto h-min flex-shrink">
+    <Greeting
+      transition:persist
+      client:load
+      messages={[
+        "experience the greatest website to ever exist",
+        "web dev is way too hard",
+        "help",
+        '"if you wait until the last minute, it only takes a minute to do"',
+        "according to all known laws of aviation...",
+        "you got games on your phone?",
+        "you can't just say perchance",
+      ]}
+    />
+  </div>
+  <ThemeToggle />
   <div
-    class="z-50 flex h-12 items-center justify-between rounded-md bg-glass shadow-header backdrop-blur"
+    class="mx-1 my-auto h-min border border-black bg-red-400 px-1 dark:border-white dark:bg-red-800"
   >
-    <!-- Home Icon -->
-    <a aria-label="Home" href="/" class="shrink-0 pl-1.5">
-      <img
-        src="/favicon.svg"
-        alt="Home Icon"
-        class="h-10 transition-transform hover:-rotate-6 hover:scale-110"
-      />
-    </a>
-
-    <!-- Center greeting -->
-    <div class="hidden lg:block">
-      <Greeting
-        transition:persist
-        client:load
-        messages={[
-          "experience the greatest website to ever exist",
-          "web dev is way too hard",
-          "help",
-          '"if you wait until the last minute, it only takes a minute to do"',
-          "according to all known laws of aviation...",
-          "you got games on your phone?",
-          "you can't just say perchance",
-        ]}
-      />
-    </div>
-
-    <!-- Nav Links -->
-    <div class="mr-0.5 flex shrink-0 font-display text-lg">
-      <a
-        href="/portfolio"
-        class="rounded-md px-5 py-2 font-display hover:bg-accent-hover-transparent hover:shadow-border"
-        >portfolio</a
-      >
-      <a
-        href="/blog"
-        class="rounded-md px-5 py-2 font-display hover:bg-accent-hover-transparent hover:shadow-border"
-        >blog</a
-      >
-    </div>
+    v2.0.1
   </div>
 </header>

@@ -1,52 +1,76 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Social from "../components/Social.astro";
-import SpinningWord from "../components/SpinningWord.astro";
+import ASCII from "../components/ASCII.astro";
 const pageTitle = "BEnh3N's Portfolio";
+
+const options = ["programmer", "photographer", "student", "musician", "gamer"];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <!-- <div class="-mt-16 flex h-dvh pt-16"> -->
-  <div
-    class="-mt-14 flex h-dvh flex-col items-center justify-evenly pt-14 sm:flex-row"
-  >
-    <!-- Logo -->
-    <div class="w-4/5 transition-all sm:w-2/5">
-      <img src="/favicon.svg" alt="logo" />
-    </div>
+  <div class="flex h-screen justify-evenly">
+    <ASCII />
+    <div class="my-auto basis-1/3">
+      <p>
+        hello, my name is<br /><span class="text-xl underline"
+          >bennett pohlmann</span
+        ><br />i'm a
+        <span id="typer">{options[0]}</span><span id="cursor">|</span>
 
-    <!-- Text -->
-    <div
-      class="text-md flex flex-col justify-center gap-0 px-4 text-center font-display sm:w-2/5 sm:px-0 sm:text-start lg:text-xl"
-    >
-      <p
-        class="mb-2 w-min rounded-lg bg-gradient-to-r from-red-600 to-indigo-700 px-1 text-7xl font-bold lg:px-1.5 lg:text-8xl"
-      >
-        BEnh3N
+        <script is:inline type="module" define:vars={{ options }}>
+          function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+          }
+
+          const typer = document.getElementById("typer");
+          const cursor = document.getElementById("cursor");
+
+          let handle;
+          function startBlink() {
+            handle = setInterval(() => {
+              cursor.style.visibility =
+                cursor.style.visibility === "hidden" ? "visible" : "hidden";
+            }, 500);
+          }
+          function stopBlink() {
+            cursor.style.visibility = "visible";
+            clearInterval(handle);
+          }
+
+          async function replaceTyper() {
+            const current = typer.innerText;
+            const next =
+              options[(options.indexOf(current) + 1) % options.length];
+
+            const CHAR_DELAY = 40;
+            const WORD_DELAY = 2300;
+
+            stopBlink();
+
+            while (typer.innerText.length > 0) {
+              typer.innerText = typer.innerText.slice(0, -1);
+              // wait
+              await sleep(CHAR_DELAY);
+            }
+
+            // type in next
+            for (let i = 0; i < next.length; i++) {
+              typer.innerText += next[i];
+              await sleep(CHAR_DELAY);
+            }
+
+            startBlink();
+
+            // wait
+            await sleep(WORD_DELAY);
+            replaceTyper();
+          }
+
+          startBlink();
+          setTimeout(() => {
+            replaceTyper();
+          }, 3000);
+        </script>
       </p>
-      <p>Hello, my name is Bennett!</p>
-
-      <!-- Spinny Text line -->
-      <div class="flex">
-        <p>I'm a</p>
-        <div class="h-6 overflow-hidden pl-3 lg:h-7">
-          <SpinningWord>programmer</SpinningWord>
-          <SpinningWord>photographer</SpinningWord>
-          <SpinningWord>musician</SpinningWord>
-          <SpinningWord>gamer</SpinningWord>
-          <SpinningWord>student</SpinningWord>
-          <SpinningWord>programmer</SpinningWord>
-        </div>
-      </div>
-
-      <p class="text-end sm:text-start">...and much more</p>
-      <div
-        class="flex justify-center gap-2 pt-2 text-sm sm:justify-start lg:text-lg"
-      >
-        <Social platform="twitter" username="BEnh3N" />
-        <Social platform="github" username="BEnh3N" />
-        <Social platform="youtube" username="@BEnh3N" />
-      </div>
     </div>
   </div>
 </BaseLayout>

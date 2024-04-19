@@ -2,8 +2,6 @@
 const { tag } = Astro.props;
 ---
 
-<a
-  href={`/tags/${tag}`}
-  class="bg-accent-button hover:bg-accent-hover font-display shadow-border rounded-md px-4 py-2 text-sm active:scale-95"
-  >{tag}</a
->
+<p class="text-clip text-nowrap">
+  + <a href={`/tags/${tag}`} class="underline">{tag}</a>
+</p>

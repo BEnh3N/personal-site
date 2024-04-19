@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import TagButton from "../../components/Tag.astro";
 import BlogGrid from "../../components/BlogGrid.astro";
 import { getCollection } from "astro:content";
+import Sidebar from "../../components/Sidebar.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
@@ -27,12 +28,13 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <div class="px-2 pt-1">
-    <div class="flex flex-wrap items-baseline pb-2 pl-2 font-display">
-      <p class="pr-2">All posts tagged with</p>
+  <!-- <Sidebar>
+    <p class="text-center">posts tagged with</p>
+    <div class="mx-2">
       <TagButton tag={tag} />
     </div>
-
+  </Sidebar> -->
+  <div class="ml-60">
     <BlogGrid posts={posts} />
   </div>
 </BaseLayout>

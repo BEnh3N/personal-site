@@ -3,11 +3,11 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  // darkMode: 'class',
+  darkMode: 'selector',
   theme: {
     extend: {
       fontFamily: {
-        'display': ["JetBrains Mono", ...defaultTheme.fontFamily.serif],
+        'display': ['Source Code Pro Variable', ...defaultTheme.fontFamily.serif],
         'body': ["Inter var", "monospace"],
       },
       colors: {
@@ -26,47 +26,6 @@ export default {
         'border': 'inset 0 0 0 0.1rem rgba(225, 225, 225, 4%)',
         'header': '0 0 0 0.2rem rgba(25, 25, 25, 0.85) inset, 0 0 20px 0 rgba(48, 48, 48, .5)',
       },
-      keyframes: {
-        wordspin: {
-          '18%': {
-            transform: 'translateY(0%)'
-          },
-          '20%': {
-            transform: 'translateY(-100%)'
-          },
-
-          '38%': {
-            transform: 'translateY(-100%)'
-          },
-          '40%': {
-            transform: 'translateY(-200%)'
-          },
-
-          '58%': {
-            transform: 'translateY(-200%)'
-          },
-          '60%': {
-            transform: 'translateY(-300%)'
-          },
-
-          '78%': {
-            transform: 'translateY(-300%)'
-          },
-          '80%': {
-            transform: 'translateY(-400%)'
-          },
-
-          '98%': {
-            transform: 'translateY(-400%)'
-          },
-          '100%': {
-            transform: 'translateY(-500%)'
-          },
-        },
-      },
-      animation: {
-        'word-spin': 'wordspin 10s ease-in-out infinite'
-      }
     },
   },
   plugins: [],
