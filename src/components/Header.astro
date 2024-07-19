@@ -4,15 +4,15 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
-  class="fixed top-0 z-50 flex h-10 w-screen border-gray-500 bg-white dark:bg-black"
+  class="fixed top-0 z-50 flex h-10 w-screen items-center border-b border-dashed border-gray-500 bg-white dark:bg-black"
 >
-  <div class="mx-4 my-auto flex h-min gap-4 underline">
+  <div class="mx-4 flex gap-4 underline">
     <a href="/">home</a>
     <a href="/blog">blog</a>
     <a href="/portfolio">portfolio</a>
   </div>
 
-  <div class="mx-4 my-auto hidden h-min flex-shrink lg:inline">
+  <div class="hidden lg:inline">
     <Greeting
       transition:persist
       client:load
@@ -27,11 +27,17 @@ import ThemeToggle from "./ThemeToggle.astro";
       ]}
     />
   </div>
+
+  <!-- Spacer because previous element may or may not be on the page -->
   <div class="flex-grow"></div>
+
   <ThemeToggle />
-  <div
-    class="mx-1 my-auto h-min border border-black bg-red-400 px-1 dark:border-white dark:bg-red-800"
+  <a
+    href="https://github.com/BEnh3N/personal-site"
+    class="mx-2 bg-red-400 px-1 outline outline-1 outline-black dark:bg-red-800 dark:outline-white"
+    target="_blank"
+    rel="noopener noreferrer"
   >
     v2.0.1
-  </div>
+  </a>
 </header>
