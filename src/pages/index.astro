@@ -8,78 +8,71 @@ const options = ["programmer", "photographer", "student", "musician", "gamer"];
 
 <BaseLayout pageTitle={pageTitle}>
   <div
-    class="flex h-dvh flex-col justify-center pt-10 md:flex-row md:justify-evenly"
+    class="flex h-dvh flex-col items-center justify-center gap-10 pt-10 md:flex-row md:gap-20"
   >
     <!-- ASCII Art -->
-    <div class="flex basis-1/3 justify-center md:my-auto md:justify-end">
-      <ASCII />
-    </div>
+    <ASCII />
 
     <!-- Intro -->
-    <div
-      class="flex basis-1/3 justify-center md:my-auto md:justify-start md:text-left"
-    >
-      <p class="my-auto text-center md:text-left">
-        hello, my name is<br />
-        <span class="text-5xl font-bold">bennett</span>
-        <br />i'm a
-        <span id="typer">{options[0]}</span><span id="cursor">|</span>
+    <p>
+      hello, my name is<br />
+      <span class="text-5xl font-bold">bennett</span>
+      <br />i'm a
+      <span id="typer">{options[0]}</span><span id="cursor">|</span>
 
-        <script is:inline type="module" define:vars={{ options }}>
-          function sleep(ms) {
-            return new Promise((resolve) => setTimeout(resolve, ms));
-          }
+      <script is:inline type="module" define:vars={{ options }}>
+        function sleep(ms) {
+          return new Promise((resolve) => setTimeout(resolve, ms));
+        }
 
-          const typer = document.getElementById("typer");
-          const cursor = document.getElementById("cursor");
+        const typer = document.getElementById("typer");
+        const cursor = document.getElementById("cursor");
 
-          let handle;
-          function startBlink() {
-            handle = setInterval(() => {
-              cursor.style.visibility =
-                cursor.style.visibility === "hidden" ? "visible" : "hidden";
-            }, 500);
-          }
-          function stopBlink() {
-            cursor.style.visibility = "visible";
-            clearInterval(handle);
-          }
+        let handle;
+        function startBlink() {
+          handle = setInterval(() => {
+            cursor.style.visibility =
+              cursor.style.visibility === "hidden" ? "visible" : "hidden";
+          }, 500);
+        }
+        function stopBlink() {
+          cursor.style.visibility = "visible";
+          clearInterval(handle);
+        }
 
-          async function replaceTyper() {
-            const current = typer.innerText;
-            const next =
-              options[(options.indexOf(current) + 1) % options.length];
+        async function replaceTyper() {
+          const current = typer.innerText;
+          const next = options[(options.indexOf(current) + 1) % options.length];
 
-            const CHAR_DELAY = 40;
-            const WORD_DELAY = 2300;
+          const CHAR_DELAY = 40;
+          const WORD_DELAY = 2300;
 
-            stopBlink();
+          stopBlink();
 
-            while (typer.innerText.length > 0) {
-              typer.innerText = typer.innerText.slice(0, -1);
-              // wait
-              await sleep(CHAR_DELAY);
-            }
-
-            // type in next
-            for (let i = 0; i < next.length; i++) {
-              typer.innerText += next[i];
-              await sleep(CHAR_DELAY);
-            }
-
-            startBlink();
-
+          while (typer.innerText.length > 0) {
+            typer.innerText = typer.innerText.slice(0, -1);
             // wait
-            await sleep(WORD_DELAY);
-            replaceTyper();
+            await sleep(CHAR_DELAY);
+          }
+
+          // type in next
+          for (let i = 0; i < next.length; i++) {
+            typer.innerText += next[i];
+            await sleep(CHAR_DELAY);
           }
 
           startBlink();
-          setTimeout(() => {
-            replaceTyper();
-          }, 3000);
-        </script>
-      </p>
-    </div>
+
+          // wait
+          await sleep(WORD_DELAY);
+          replaceTyper();
+        }
+
+        startBlink();
+        setTimeout(() => {
+          replaceTyper();
+        }, 3000);
+      </script>
+    </p>
   </div>
 </BaseLayout>
