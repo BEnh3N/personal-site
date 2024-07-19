@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogGrid from "../../components/BlogGrid.astro";
+// import BlogGrid from "../../components/BlogGrid.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -33,6 +33,6 @@ const { posts } = Astro.props;
     </div>
   </Sidebar> -->
   <div class="ml-60">
-    <BlogGrid posts={posts} />
+    <!-- <BlogGrid posts={posts} /> -->
   </div>
 </BaseLayout>
