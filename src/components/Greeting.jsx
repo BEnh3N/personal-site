@@ -18,6 +18,6 @@ export default function Greeting({ messages }) {
     }
 
     return (
-        <button class="italic text-gray-500 truncate" onClick={() => updateGreeting()}>// {greeting}</button>
+        <button class="italic text-gray-500" onClick={() => updateGreeting()}>// {greeting}</button>
     );
 }
