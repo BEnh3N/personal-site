@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Berkeley Mono";
+    src:
+      url("/fonts/BerkeleyMono-Regular.woff2") format("woff2"),
+      url("/fonts/BerkeleyMono-Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Berkeley Mono";
+    font-style: italic;
+    src:
+      url("/fonts/BerkeleyMono-Italic.woff2") format("woff2"),
+      url("/fonts/BerkeleyMono-Italic.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Berkeley Mono";
+    font-weight: bold;
+    src:
+      url("/fonts/BerkeleyMono-Bold.woff2") format("woff2"),
+      url("/fonts/BerkeleyMono-Bold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Berkeley Mono";
+    font-weight: bold;
+    font-style: italic;
+    src:
+      url("/fonts/BerkeleyMono-BoldItalic.woff2") format("woff2"),
+      url("/fonts/BerkeleyMono-BoldItalic.woff") format("woff");
+  }
+}

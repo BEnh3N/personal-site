@@ -1,4 +1,4 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,8 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['Source Code Pro Variable', "monospace"],
-        'body': ["Inter var", ...defaultTheme.fontFamily.sans],
+        'mono': ['Berkeley Mono', ...defaultTheme.fontFamily.mono],
       },
     },
   },
