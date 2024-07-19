@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import BlogGrid from "../components/BlogGrid.astro";
 import Tag from "../components/Tag.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = await getCollection("posts");
@@ -9,16 +8,6 @@ const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <!-- <Sidebar>
-    <div class="sticky top-0 bg-background text-center">tags</div>
-    <div class="mx-2 flex h-full flex-col gap-2">
-      {tags.map((tag) => <Tag tag={tag} />)}
-    </div>
-  </Sidebar> -->
-  <!-- <div class="mt-10 h-10 border-b border-dashed border-accent-subtext"></div> -->
-  <!-- <div class="mx-4">
-    <BlogGrid posts={allPosts} />
-  </div> -->
   <div class="h-dvh w-screen content-center text-center">
     in the process of refactoring!<br />(you weren't gonna read it anyway)
   </div>
