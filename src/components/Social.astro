@@ -2,7 +2,9 @@
 const { platform, username } = Astro.props;
 ---
 
-<a
-  class="rounded-md bg-accent px-2 py-1 font-display font-bold text-background active:scale-95"
-  href={`https://www.${platform}.com/${username}`}>{platform}</a
->
+<button class="border border-black p-1 dark:border-white">
+  <a
+    href={`https://${platform}.com/${username}`}
+    aria-label={`${platform} Link`}><slot /></a
+  >
+</button>
