@@ -10,24 +10,24 @@ const { post } = Astro.props;
 const frontmatter = post.data;
 ---
 
-<div class="text-balance">
-  <div class="mb-2 aspect-video">
+<div>
+  <div class="mb-2 aspect-video border border-black dark:border-white">
     <a href={`/posts/${post.slug}/`}>
       <Image
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
-        class="size-full rounded-sm object-cover"
+        class="size-full object-cover"
       />
     </a>
   </div>
-  <p>
+  <p class="text-balance">
     {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
       frontmatter.pubDate.getUTCFullYear().toString().slice(2)
-    }
+    }<br />
+    <a
+      class="text-xl font-bold underline md:text-2xl lg:text-3xl"
+      href={`/posts/${post.slug}/`}>{frontmatter.title}</a
+    ><br />
+    {frontmatter.description}
   </p>
-  <a
-    class="text-xl font-bold underline md:text-2xl lg:text-3xl"
-    href={`/posts/${post.slug}/`}>{frontmatter.title}</a
-  >
-  <p>{frontmatter.description}</p>
 </div>
