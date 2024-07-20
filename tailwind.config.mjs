@@ -8,8 +8,11 @@ export default {
     extend: {
       fontFamily: {
         'mono': ['Berkeley Mono', ...defaultTheme.fontFamily.mono],
+        'sans': ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
