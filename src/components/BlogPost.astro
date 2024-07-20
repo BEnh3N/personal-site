@@ -1,18 +1,29 @@
 ---
 import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
 
 const { post } = Astro.props;
 const frontmatter = post.data;
 ---
 
 <div class="text-balance">
-  <div class="mb-2 aspect-video overflow-clip rounded-sm">
+  <div class="mb-2 aspect-video">
     <a href={`/posts/${post.slug}/`}>
-      <Image src={frontmatter.image.url} alt={frontmatter.image.alt} />
+      <Image
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+        class="size-full rounded-sm object-cover"
+      />
     </a>
   </div>
   <p>
-    {frontmatter.pubDate.toLocaleDateString("en-US")}
+    {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
+      frontmatter.pubDate.getUTCFullYear().toString().slice(2)
+    }
   </p>
   <a
     class="text-xl font-bold underline md:text-2xl lg:text-3xl"

@@ -10,6 +10,10 @@ const pageTitle = "Blog";
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="mt-10 grid grid-cols-1 gap-10 p-10 md:grid-cols-2">
-    {allPosts.map((post) => <BlogPost post={post} />)}
+    {
+      allPosts
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+        .map((post) => <BlogPost post={post} />)
+    }
   </div>
 </BaseLayout>

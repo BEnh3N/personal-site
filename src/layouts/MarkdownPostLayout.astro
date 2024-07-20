@@ -1,35 +1,42 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Tag from "../components/Tag.astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const frontmatter = post.data;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="px-2 pt-1">
-    <div class="mb-4 flex flex-col md:flex-row">
-      <div class="aspect-video md:w-2/5">
-        <img
+  <div class="h-dvh overflow-y-auto p-10">
+    <div class="mx-auto my-10 max-w-screen-md text-center">
+      <div class="mb-2 aspect-video">
+        <Image
           src={frontmatter.image.url}
           alt={frontmatter.image.alt}
-          class="rounded-md object-cover"
+          class="size-full rounded-sm object-cover"
         />
       </div>
-      <div class="flex flex-col justify-center pt-2 font-display md:px-4">
-        <p class="text-3xl font-bold md:text-4xl">
-          {frontmatter.title}
-        </p>
-        <p class="italic">{frontmatter.description}</p>
-        <p class="text-accent-subtext">
-          {frontmatter.pubDate.toString().slice(4, 15)}
-        </p>
-        <p class="text-accent-subtext">Written by: {frontmatter.author}</p>
-        <div class="flex flex-wrap gap-2 pt-1">
-          {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
-        </div>
-      </div>
+      <p>
+        {frontmatter.pubDate.getUTCMonth() + 1}/{
+          frontmatter.pubDate.getUTCDate()
+        }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}
+      </p>
+      <p class="text-xl font-bold underline md:text-2xl lg:text-3xl">
+        {frontmatter.title}
+      </p>
+      <p>{frontmatter.description}</p>
     </div>
-    <div>
+    <!-- <div class="flex flex-wrap gap-2 pt-1">
+          {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
+        </div> -->
+    <div class="prose dark:prose-invert prose-neutral mx-auto font-sans">
+      <hr />
       <slot />
     </div>
   </div>
