@@ -4,10 +4,11 @@ pubDate: 2024-01-27
 description: "This is a test of the blog post formatting"
 author: "Bennett Pohlmann"
 image:
-  url: "https://flxt.tmsimg.com/assets/p159762_v_h8_am.jpg"
+  url: "../images/bee-movie.jpg"
   alt: "Bee Movie Screencap"
 tags: ["according", "to all known laws", "of aviation"]
 ---
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Eu sem integer vitae justo eget magna. Risus quis varius quam quisque id diam vel quam elementum. Mauris vitae ultricies leo integer malesuada nunc vel. Massa eget egestas purus viverra. Eleifend donec pretium vulputate sapien nec sagittis. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Ultrices sagittis orci a scelerisque purus semper eget. Risus quis varius quam quisque id diam vel quam. Maecenas accumsan lacus vel facilisis. Quis blandit turpis cursus in hac habitasse platea dictumst. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Et tortor consequat id porta. Gravida quis blandit turpis cursus in hac. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Sed pulvinar proin gravida hendrerit lectus a.
 
 Rutrum quisque non tellus orci ac auctor augue mauris augue. Dolor sed viverra ipsum nunc aliquet bibendum enim. Sagittis id consectetur purus ut faucibus pulvinar. Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum. Et netus et malesuada fames ac. Ac tincidunt vitae semper quis lectus nulla at volutpat. Adipiscing elit ut aliquam purus. Ante metus dictum at tempor commodo ullamcorper. Congue nisi vitae suscipit tellus mauris a diam. Nisi porta lorem mollis aliquam ut. Nullam eget felis eget nunc lobortis mattis. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Sed risus pretium quam vulputate. Varius duis at consectetur lorem.
