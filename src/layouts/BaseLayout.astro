@@ -3,6 +3,8 @@ import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import "@fontsource-variable/inter";
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -12,10 +14,6 @@ const { pageTitle } = Astro.props;
     <link rel="icon" href="/favicon.svg?v=2" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- Inter Font -->
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     <title>{pageTitle}</title>
     <meta
