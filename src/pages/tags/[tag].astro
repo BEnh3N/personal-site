@@ -30,7 +30,7 @@ const { posts } = Astro.props;
     {
       posts
         .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-        .map((post) => <BlogPost post={post} />)
+        .map((post) => <BlogPost post={post} canClick={true} />)
     }
   </div>
 </BaseLayout>

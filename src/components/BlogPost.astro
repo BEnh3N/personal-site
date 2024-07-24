@@ -5,22 +5,25 @@ import Tag from "./Tag.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
+  canClick: boolean;
 }
 
-const { post } = Astro.props;
+const { post, canClick } = Astro.props;
 const frontmatter = post.data;
+
+const Type = canClick ? "a" : "Fragment";
 ---
 
 <div class="text-balance font-mono">
   <div class="mb-2 aspect-video border border-black p-px dark:border-white">
-    <a href={`/posts/${post.slug}/`}>
+    <Type href={`/posts/${post.slug}/`}>
       <Image
         src={frontmatter.image.url}
         alt={frontmatter.image.alt}
         class="size-full object-cover"
         loading="eager"
       />
-    </a>
+    </Type>
   </div>
   <div class="flex flex-wrap items-baseline">
     <p class="mr-2">
@@ -31,9 +34,9 @@ const frontmatter = post.data;
     {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
   </div>
   <p>
-    <a
+    <Type
       class="text-xl font-bold underline md:text-2xl lg:text-3xl"
-      href={`/posts/${post.slug}/`}>{frontmatter.title}</a
+      href={`/posts/${post.slug}/`}>{frontmatter.title}</Type
     >
   </p>
   <p>{frontmatter.description}</p>
