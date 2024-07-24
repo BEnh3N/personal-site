@@ -11,7 +11,7 @@ const { post } = Astro.props;
 const frontmatter = post.data;
 ---
 
-<div>
+<div class="text-balance font-mono">
   <div class="mb-2 aspect-video border border-black p-px dark:border-white">
     <a href={`/posts/${post.slug}/`}>
       <Image
@@ -21,15 +21,19 @@ const frontmatter = post.data;
       />
     </a>
   </div>
-  <p class="text-balance font-mono">
-    {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
-      frontmatter.pubDate.getUTCFullYear().toString().slice(2)
-    }{frontmatter.tags.map((tag) => <Tag tag={tag} />)}
-    <br />
+  <div class="flex flex-wrap items-baseline">
+    <p class="mr-2">
+      {frontmatter.pubDate.getUTCMonth() + 1}/{
+        frontmatter.pubDate.getUTCDate()
+      }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}
+    </p>
+    {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
+  </div>
+  <p>
     <a
       class="text-xl font-bold underline md:text-2xl lg:text-3xl"
       href={`/posts/${post.slug}/`}>{frontmatter.title}</a
-    ><br />
-    {frontmatter.description}
+    >
   </p>
+  <p>{frontmatter.description}</p>
 </div>
