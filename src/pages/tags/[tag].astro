@@ -1,6 +1,6 @@
 ---
+import BlogPost from "../../components/BlogPost.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-// import BlogGrid from "../../components/BlogGrid.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -25,14 +25,14 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-  <!-- <Sidebar>
-    <p class="text-center">posts tagged with</p>
-    <div class="mx-2">
-      <TagButton tag={tag} />
+<BaseLayout pageTitle=`Tag: ${tag}`>
+  <div class="h-dvh overflow-y-auto p-10">
+    <div class="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+      {
+        posts
+          .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+          .map((post) => <BlogPost post={post} />)
+      }
     </div>
-  </Sidebar> -->
-  <div class="ml-60">
-    <!-- <BlogGrid posts={posts} /> -->
   </div>
 </BaseLayout>
