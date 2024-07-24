@@ -6,7 +6,7 @@ author: "Bennett Pohlmann"
 image:
   url: "../images/formatting.jpg"
   alt: "Bee Movie Screencap"
-tags: ["according", "to all known laws", "of aviation"]
+tags: ["web dev", "tailwind", "astro"]
 ---
 
 Here I am going to introduce this post with a super long line with a link to the [home page](/) and some text with a ~~strikethrough~~, or maybe a

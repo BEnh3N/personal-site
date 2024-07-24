@@ -13,8 +13,8 @@ const frontmatter = post.data;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="h-dvh overflow-y-auto p-10">
-    <div class="mx-auto my-10 max-w-prose text-center font-sans">
+  <div class="h-dvh overflow-y-auto p-10 font-sans">
+    <div class="mx-auto my-10 max-w-prose">
       <div class="mb-2 aspect-video border border-black p-px dark:border-white">
         <Image
           src={frontmatter.image.url}
@@ -25,7 +25,9 @@ const frontmatter = post.data;
       <p class="font-mono">
         {frontmatter.pubDate.getUTCMonth() + 1}/{
           frontmatter.pubDate.getUTCDate()
-        }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}<br />
+        }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}
+        {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
+        <br />
         <span class="text-xl font-bold underline md:text-2xl lg:text-3xl">
           {frontmatter.title}</span
         ><br />
@@ -35,7 +37,7 @@ const frontmatter = post.data;
     <!-- <div class="flex flex-wrap gap-2 pt-1">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag} />)}
         </div> -->
-    <div class="prose prose-neutral mx-auto font-sans dark:prose-invert">
+    <div class="prose prose-neutral mx-auto dark:prose-invert">
       <hr />
       <slot />
     </div>
