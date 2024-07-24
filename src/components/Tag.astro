@@ -2,10 +2,7 @@
 const { tag } = Astro.props;
 ---
 
-<span>
-  <a
-    href={`/tags/${tag}`}
-    class="text-nowrap px-1 outline outline-1 outline-black dark:outline-white"
-    >{tag}</a
-  >
-</span>
+<a
+  href={`/tags/${tag}`}
+  class="ml-2 text-nowrap border border-black px-1 dark:border-white">{tag}</a
+>

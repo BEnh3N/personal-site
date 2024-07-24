@@ -24,8 +24,7 @@ const frontmatter = post.data;
   <p class="text-balance font-mono">
     {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
       frontmatter.pubDate.getUTCFullYear().toString().slice(2)
-    }
-    {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
+    }{frontmatter.tags.map((tag) => <Tag tag={tag} />)}
     <br />
     <a
       class="text-xl font-bold underline md:text-2xl lg:text-3xl"
