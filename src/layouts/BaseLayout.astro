@@ -25,7 +25,7 @@ const { pageTitle } = Astro.props;
   </head>
   <body class="font-mono dark:bg-black dark:text-white">
     <Header />
-    <slot />
+    <div class="h-dvh overflow-y-auto pt-10"><slot /></div>
     <!-- <Footer /> -->
   </body>
 </html>
