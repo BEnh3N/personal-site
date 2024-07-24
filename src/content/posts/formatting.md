@@ -5,7 +5,7 @@ description: "This is a test of the blog post formatting"
 author: "Bennett Pohlmann"
 image:
   url: "../images/formatting.jpg"
-  alt: "Bee Movie Screencap"
+  alt: "Tailwind Typography Logo"
 tags: ["web dev", "tailwind", "astro"]
 ---
 
