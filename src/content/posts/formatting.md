@@ -54,4 +54,4 @@ I can even make tables (to my genuine surprise)
 
 Finally, the ultimate test: an **_image_**:
 
-![tailwind image](../images/formatting.jpg)
+![tailwind typography logo](../images/formatting.jpg)
