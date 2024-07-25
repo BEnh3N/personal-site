@@ -8,11 +8,7 @@ const pageTitle = "Tag Index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="px-2">
-    <p class="font-display text-5xl font-bold">Tags</p>
-    <p class="font-display text-accent-subtext italic">
-      A list of all blog post tags (but why?)
-    </p>
+  <div class="m-10">
     <div class="flex flex-wrap gap-2">
       {tags.map((tag) => <Tag tag={tag} />)}
     </div>
