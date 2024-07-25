@@ -6,7 +6,6 @@ const postCollection = defineCollection({
         title: z.string(),
         pubDate: z.date(),
         description: z.string(),
-        author: z.string(),
         image: z.object({
             url: image().refine((img) => img.width >= 720, {
                 message: "Cover image must be at least 720 pixels wide!",

@@ -2,7 +2,6 @@
 title: "Blog Formatting Test"
 pubDate: 2024-07-20
 description: "This is a test of the blog post formatting"
-author: "Bennett Pohlmann"
 image:
   url: "../images/formatting.jpg"
   alt: "Tailwind Typography Logo"
