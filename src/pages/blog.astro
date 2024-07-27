@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 const allPosts = await getCollection("posts");
-const pageTitle = "Blog";
+const pageTitle = "blog";
 // import Tag from "../components/Tag.astro";
 // const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---

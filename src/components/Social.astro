@@ -1,10 +1,9 @@
 ---
-const { platform, username } = Astro.props;
+const { name, link } = Astro.props;
 ---
 
-<button class="border border-black p-1 dark:border-white">
-  <a
-    href={`https://${platform}.com/${username}`}
-    aria-label={`${platform} Link`}><slot /></a
+<button class="border border-black p-1 leading-none dark:border-white">
+  <a href={`https://${link}`} aria-label={`${name} Link`}>
+    <div class="flex gap-1"><slot />{name}</div></a
   >
 </button>
