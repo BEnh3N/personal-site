@@ -5,5 +5,5 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: "https://benh3n.com",
-  integrations: [tailwind(), preact({ compat: true })]
+  integrations: [tailwind({ applyBaseStyles: false }), preact({ compat: true })]
 });
