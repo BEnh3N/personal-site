@@ -7,6 +7,5 @@ const { name, link, icon } = Astro.props;
   href={`https://${link}`}
   aria-label={`${name} link`}
 >
-  <p class="font-symbols">{icon}</p>
-  <p>{name}</p>
-</a>
+  <span class="font-symbols">{icon}</span>{name}</a
+>
