@@ -1,15 +1,16 @@
 ---
 import Greeting from "./Greeting";
+import Link from "./Link.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
   class="fixed top-0 z-50 flex h-10 w-full items-center bg-white/75 backdrop-blur dark:bg-black/75"
 >
-  <div class="mx-4 flex gap-4 underline">
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/blog">blog</a>
+  <div class="mx-4 flex gap-4">
+    <Link url="/">home</Link>
+    <Link url="/about">about</Link>
+    <Link url="/blog">blog</Link>
   </div>
 
   <div class="hidden lg:inline">

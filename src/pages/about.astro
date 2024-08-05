@@ -1,4 +1,5 @@
 ---
+import Link from "../components/Link.astro";
 import Social from "../components/Social.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -39,19 +40,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h1 class="mt-8 text-5xl font-bold">this site</h1>
         <p>
           This site is mainly to be used as a personal portfolio and a place to
-          <a href="/blog" class="underline">write about my experiences</a> with life
-          and technology.
+          <Link url="/blog">write about my experiences</Link> with life and technology.
           <br />
-          Big inspiration for this site came from <a
-            href="https://basicappleguy.com"
-            class="underline">Basic Apple Guy</a
-          >, <a href="https://jamesbvaughan.com" class="underline"
-            >James Vaughan</a
-          >, and <a href="https://cobalt.tools" class="underline">cobalt</a>.
-          The typing effect on the home screen was ripped directly from <a
-            href="https://bun.sh"
-            class="underline">Bun's homepage</a
-          >.
+          Big inspiration for this site came from
+          <Link url="https://basicappleguy.com">Basic Apple Guy</Link>,
+          <Link url="https://jamesbvaughan.com">James Vaughan</Link>, and
+          <Link url="https://cobalt.tools">cobalt</Link>. The typing effect on
+          the home screen was ripped directly from
+          <Link url="https://bun.sh">Bun's homepage</Link>.
           <br />
           I plan on writing a blog post further down the line detailing more about
           the technology behind this site.
