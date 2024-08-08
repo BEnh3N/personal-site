@@ -5,54 +5,52 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="about me">
-  <div class="m-5 font-sans sm:m-10">
+  <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
-      <div class="text-pretty font-mono">
-        <h1 class="text-5xl font-bold">about me</h1>
-        <p>
-          I'm a student from Las Vegas, Nevada who's been interested in
-          computers and technology all my life, as well as music, camping,
-          soccer, and games.
-          <br />
-          I am currently attending OSU (the one in Oregon, not Ohio) getting a degree
-          in Electrical and Computer Engineering.
-          <br />
-          In my free time I like to listen to music (Radiohead fanboy), play guitar,
-          watch movies (go see Baby Driver), and play video games.
-        </p>
+      <h1 class="text-5xl font-bold">about me</h1>
+      <p>
+        I'm a student from Las Vegas, Nevada who's been interested in computers
+        and technology all my life, as well as music, camping, soccer, and
+        games.
+        <br />
+        I am currently attending OSU (the one in Oregon, not Ohio) getting a degree
+        in Electrical and Computer Engineering.
+        <br />
+        In my free time I like to listen to music (Radiohead fanboy), play guitar,
+        watch movies (go see Baby Driver), and play video games.
+      </p>
 
-        <h1 class="mt-8 text-5xl font-bold">platforms</h1>
-        <div class="mt-2 flex flex-wrap gap-2">
-          <Social name="github" link="github.com/BEnh3N" icon="󰊤" />
-          <Social name="twitter" link="x.com/BEnh3N" icon="󰕄" />
-          <Social name="youtube" link="youtube.com/@BEnh3N" icon="󰗃" />
-          <Social
-            name="linkedin"
-            link="linkedin.com/in/bennett-pohlmann/"
-            icon="󰌻"
-          />
-          <Social name="instagram" link="instagram.com/toaster6161/" icon="󰋾" />
-        </div>
-
-        <h1 class="mt-8 text-5xl font-bold">projects</h1>
-        <p>to be filled in...</p>
-
-        <h1 class="mt-8 text-5xl font-bold">this site</h1>
-        <p>
-          This site is mainly to be used as a personal portfolio and a place to
-          <Link url="/blog">write about my experiences</Link> with life and technology.
-          <br />
-          Big inspiration for this site came from
-          <Link url="https://basicappleguy.com">Basic Apple Guy</Link>,
-          <Link url="https://jamesbvaughan.com">James Vaughan</Link>, and
-          <Link url="https://cobalt.tools">cobalt</Link>. The typing effect on
-          the home screen was ripped directly from
-          <Link url="https://bun.sh">Bun's homepage</Link>.
-          <br />
-          I plan on writing a blog post further down the line detailing more about
-          the technology behind this site.
-        </p>
+      <h1 class="mt-8 text-5xl font-bold">platforms</h1>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <Social name="github" link="github.com/BEnh3N" icon="󰊤" />
+        <Social name="twitter" link="x.com/BEnh3N" icon="󰕄" />
+        <Social name="youtube" link="youtube.com/@BEnh3N" icon="󰗃" />
+        <Social
+          name="linkedin"
+          link="linkedin.com/in/bennett-pohlmann/"
+          icon="󰌻"
+        />
+        <Social name="instagram" link="instagram.com/toaster6161/" icon="󰋾" />
       </div>
+
+      <h1 class="mt-8 text-5xl font-bold">projects</h1>
+      <p>to be filled in...</p>
+
+      <h1 class="mt-8 text-5xl font-bold">this site</h1>
+      <p>
+        This site is mainly to be used as a personal portfolio and a place to
+        <Link url="/blog">write about my experiences</Link> with life and technology.
+        <br />
+        Big inspiration for this site came from
+        <Link url="https://basicappleguy.com">Basic Apple Guy</Link>,
+        <Link url="https://jamesbvaughan.com">James Vaughan</Link>, and
+        <Link url="https://cobalt.tools">cobalt</Link>. The typing effect on the
+        home screen was ripped directly from
+        <Link url="https://bun.sh">Bun's homepage</Link>.
+        <br />
+        I plan on writing a blog post further down the line detailing more about
+        the technology behind this site.
+      </p>
     </div>
   </div>
 </BaseLayout>
