@@ -9,7 +9,6 @@ export default {
       fontFamily: {
         'mono': ['Berkeley Mono', ...defaultTheme.fontFamily.mono],
         'sans': ['Inter Variable', ...defaultTheme.fontFamily.sans],
-        'symbols': 'Symbols Nerd Font'
       },
     },
   },

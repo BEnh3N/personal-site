@@ -34,9 +34,4 @@
       url("/fonts/BerkeleyMono-BoldItalic.woff2") format("woff2"),
       url("/fonts/BerkeleyMono-BoldItalic.woff") format("woff");
   }
-
-  @font-face {
-    font-family: "Symbols Nerd Font";
-    src: url("/fonts/SymbolsNerdFontMono-Regular.ttf") format("truetype");
-  }
 }
