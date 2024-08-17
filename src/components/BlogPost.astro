@@ -26,11 +26,11 @@ const Type = canClick ? "a" : "Fragment";
     </Type>
   </div>
   <div class="flex flex-wrap items-baseline">
-    <p class="mr-2">
+    <span class="mr-2">
       {frontmatter.pubDate.getUTCMonth() + 1}/{
         frontmatter.pubDate.getUTCDate()
-      }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}
-    </p>
+      }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}</span
+    >
     {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
   </div>
   <p>
