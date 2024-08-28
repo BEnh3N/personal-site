@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
+import BlogList from "../components/BlogList.astro";
 const allPosts = await getCollection("posts");
 const pageTitle = "blog";
 // import Tag from "../components/Tag.astro";
@@ -9,11 +9,7 @@ const pageTitle = "blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="m-5 grid grid-cols-1 gap-5 sm:m-10 sm:gap-10 md:grid-cols-2">
-    {
-      allPosts
-        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-        .map((post) => <BlogPost post={post} canClick={true} />)
-    }
+  <div class="m-5 sm:m-10">
+    <BlogList posts={allPosts} />
   </div>
 </BaseLayout>

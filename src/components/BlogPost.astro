@@ -1,30 +1,19 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Tag from "./Tag.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
-  canClick: boolean;
+  canClick?: boolean;
 }
 
-const { post, canClick } = Astro.props;
+const { post, canClick = true } = Astro.props;
 const frontmatter = post.data;
 
 const Type = canClick ? "a" : "Fragment";
 ---
 
-<div class="text-balance font-mono">
-  <div class="mb-2 aspect-video border border-black p-px dark:border-white">
-    <Type href={`/blog/${post.slug}/`}>
-      <Image
-        src={frontmatter.image.url}
-        alt={frontmatter.image.alt}
-        class="size-full object-cover"
-        loading="eager"
-      />
-    </Type>
-  </div>
+<div class="text-pretty">
   <div class="flex flex-wrap items-baseline">
     <span class="mr-2">
       {frontmatter.pubDate.getUTCMonth() + 1}/{
@@ -35,7 +24,7 @@ const Type = canClick ? "a" : "Fragment";
   </div>
   <p>
     <Type
-      class="text-xl font-bold underline md:text-2xl lg:text-3xl"
+      class="text-2xl font-bold underline sm:text-4xl"
       href={`/blog/${post.slug}/`}>{frontmatter.title}</Type
     >
   </p>

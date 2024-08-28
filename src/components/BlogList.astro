@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BlogPost from "./BlogPost.astro";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<div class="mx-auto flex max-w-prose flex-col gap-10">
+  {
+    posts
+      .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+      .map((post) => <BlogPost post={post} />)
+  }
+</div>

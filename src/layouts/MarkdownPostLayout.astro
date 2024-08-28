@@ -11,14 +11,17 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout pageTitle={post.data.title}>
-  <div class="m-5 font-sans sm:m-10">
+  <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
       <BlogPost post={post} canClick={false} />
     </div>
-
-    <div class="prose prose-neutral mx-auto dark:prose-invert prose-hr:my-10">
-      <hr />
-      <slot />
+    <div class="mx-auto max-w-prose">
+      <div
+        class="prose prose-neutral font-sans dark:prose-invert prose-hr:my-10"
+      >
+        <hr />
+        <slot />
+      </div>
     </div>
   </div>
 </BaseLayout>
