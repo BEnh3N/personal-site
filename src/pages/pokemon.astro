@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const MAX_POKEDEX_NUMBER = 1025;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle="olga page">
   <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
       <h1 class="text-5xl font-bold">olga's secret page</h1>
@@ -28,7 +28,7 @@ const MAX_POKEDEX_NUMBER = 1025;
       </div>
       <p id="output"></p>
 
-      <script>
+      <script is:inline define:vars={{ MAX_POKEDEX_NUMBER }} type="module">
         let input = document.querySelector("input");
         let output = document.getElementById("output");
         let name = document.getElementById("name");
@@ -38,9 +38,7 @@ const MAX_POKEDEX_NUMBER = 1025;
           throw new Error("part of page not found");
         }
 
-        const MAX_POKEDEX_NUMBER = parseInt(input.dataset.max || "1025");
-
-        let update_name = (num: number) => {
+        let update_name = (num) => {
           fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
             .then((res) => res.json())
             .then((data) => {
@@ -49,7 +47,7 @@ const MAX_POKEDEX_NUMBER = 1025;
             });
         };
 
-        let update_text = (num: number) => {
+        let update_text = (num) => {
           // check if input is a number and greater than 0
           if (isNaN(num) || num < 1) {
             output.innerText = "enter pokedex number";
