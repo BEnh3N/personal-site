@@ -49,17 +49,16 @@ const MAX_POKEDEX_NUMBER = 1025;
         let output = document.getElementById("output");
         let name = document.getElementById("name");
 
-        // check if input and output exist
+        // check if input, output, and name elements exist
         if (!input || !output || !name) {
-          throw new Error("part of page not found");
+          throw new Error("Element of page not found");
         }
 
         let update_name = (num) => {
           fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
             .then((res) => res.json())
             .then((data) => {
-              let pokemon_name = data.name;
-              name.innerText = pokemon_name;
+              name.innerText = data.name;
             });
         };
 
@@ -67,20 +66,18 @@ const MAX_POKEDEX_NUMBER = 1025;
           // check if input is a number and greater than 0
           if (isNaN(num) || num < 1) {
             output.innerText = "enter pokedex number";
-            output.classList.add("italic");
-            output.classList.add("text-gray-500");
+            output.classList.add("italic", "text-gray-500");
             name.innerText = "";
             return;
           }
 
-          // check if input is greater than max pokedex number
+          // check if input is greater than max pokedex number and clamp it if necessary
           if (num > MAX_POKEDEX_NUMBER) {
             num = MAX_POKEDEX_NUMBER;
             input.value = MAX_POKEDEX_NUMBER.toString();
           }
 
-          output.classList.remove("italic");
-          output.classList.remove("text-gray-500");
+          output.classList.remove("italic", "text-gray-500");
 
           update_name(num);
 
