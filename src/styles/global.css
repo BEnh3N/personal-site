@@ -22,6 +22,12 @@ input[type="number"] {
   appearance: textfield;
 }
 
+/* re-enables pointer cursor for buttons (why tf was this changed??) */
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
 @layer base {
   @font-face {
     font-family: "Berkeley Mono";
