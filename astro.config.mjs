@@ -1,9 +1,14 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://benh3n.com",
-  integrations: [tailwind({ applyBaseStyles: false }), preact({ compat: true })]
+  integrations: [preact({ compat: true })],
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
