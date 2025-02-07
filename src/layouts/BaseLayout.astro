@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 
 // import "../tailwind.css";
@@ -19,10 +19,12 @@ const { pageTitle } = Astro.props;
 
     <title>{pageTitle}</title>
     <meta name="description" content="Bennett Pohlmann's personal page" />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="font-mono dark:bg-black dark:text-white dark:scheme-dark">
     <Header />
-    <div class="h-dvh overflow-y-auto pt-10"><slot /></div>
+    <div class="h-dvh pt-10">
+      <div class="h-full overflow-y-auto"><slot /></div>
+    </div>
   </body>
 </html>
