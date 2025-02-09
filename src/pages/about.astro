@@ -1,4 +1,5 @@
 ---
+import H from "../components/H.astro";
 import Link from "../components/Link.astro";
 import Social from "../components/Social.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -7,8 +8,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout pageTitle="about me">
   <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
-      <h1 class="text-5xl font-bold">about me</h1>
-      <p>
+      <H>about me</H>
+      <p class="mb-8">
         I'm a student from Las Vegas, Nevada who's been interested in computers
         and technology all my life, as well as music, camping, soccer, and
         games.
@@ -20,8 +21,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         watch movies (go see Baby Driver), and play video games.
       </p>
 
-      <h1 class="mt-8 text-5xl font-bold">platforms</h1>
-      <div class="mt-2 flex flex-wrap gap-2">
+      <H>platforms</H>
+      <div class="mt-1 mb-8 flex flex-wrap gap-2">
         <Social name="github" link="github.com/BEnh3N" />
         <Social name="bluesky" link="bsky.app/profile/benh3n.com" />
         <Social name="youtube" link="youtube.com/@BEnh3N" />
@@ -31,10 +32,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <Social name="twitter" link="x.com/BEnh3N" />
       </div>
 
-      <h1 class="mt-8 text-5xl font-bold">projects</h1>
-      <p>to be filled in...</p>
+      <H>projects</H>
+      <p class="mb-8">to be filled in...</p>
 
-      <h1 class="mt-8 text-5xl font-bold">this site</h1>
+      <H>this site</H>
       <p>
         This site is mainly to be used as a personal portfolio and a place to
         <Link url="/blog">write about my experiences</Link> with life and technology.
