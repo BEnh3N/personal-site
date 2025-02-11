@@ -23,9 +23,8 @@ const Type = canClick ? "a" : "Fragment";
     {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
   </div>
   <p>
-    <Type
-      class="text-2xl font-bold underline sm:text-4xl"
-      href={`/blog/${post.id}/`}>{frontmatter.title}</Type
+    <Type class="text-2xl font-bold underline" href={`/blog/${post.id}/`}
+      >{frontmatter.title}</Type
     >
   </p>
   <p>{frontmatter.description}</p>
