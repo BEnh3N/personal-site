@@ -6,7 +6,8 @@ import "../styles/global.css";
 
 import "@fontsource-variable/inter";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description = "Bennett Pohlmann's personal page" } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -24,10 +25,10 @@ const { pageTitle } = Astro.props;
     />
 
     <title>{pageTitle}</title>
-    <meta name="description" content="Bennett Pohlmann's personal page" />
+    <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body class="dark:scheme-dark font-mono dark:bg-black dark:text-white">
+  <body class="font-mono dark:bg-black dark:text-white dark:scheme-dark">
     <Header />
     <div class="h-dvh pt-10">
       <div class="h-full overflow-y-auto"><slot /></div>

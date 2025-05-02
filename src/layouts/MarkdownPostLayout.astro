@@ -10,7 +10,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<BaseLayout pageTitle={post.data.title}>
+<BaseLayout pageTitle={post.data.title} description={post.data.description}>
   <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
       <BlogPost post={post} canClick={false} />
