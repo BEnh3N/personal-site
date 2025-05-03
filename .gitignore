@@ -21,6 +21,6 @@ pnpm-debug.log*
 .DS_Store
 
 # config files
-.vscode
-.idea
+.vscode/
+.idea/
 
