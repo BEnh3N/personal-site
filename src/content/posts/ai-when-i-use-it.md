@@ -117,7 +117,7 @@ Unfortunately, The Browser Company got a little too lost in the proverbial AI sa
 
 I think that this one example is indicative of a larger trend in the technology space of companies trying to cash in on the AI hype and consequently [making their products objectively worse](https://www.fastcompany.com/91147959/worst-brand-mistakes-of-the-ai-era-so-far). I genuinely cannot think of a time when a popular app or website implemented an AI feature that people genuinely wanted or cared about. And that's not even considering AI-washing, the practice of falsely marketing a product like it's AI powered when it actually isn't. Despite all this, we still see more and more AI features [pushed into the applications we use every day](https://aimagazine.com/ai-strategy/duolingos-ai-first-strategy-explained) as if literally anybody was asking for them.
 
-# The Only True Good I See With AI
+## The Only True Good I See With AI
 
 This leads me into the topic of AI being used for something actually interesting and beneficial for society: science. There's a really interesting Veritasium [video](https://www.youtube.com/watch?v=P_fHJIYENdI) I watched recently that talks about how an AI model was used to find the structure of proteins, a notoriously difficult and painstaking task. Over the past 6 decades, scientists have been able to work out the structures of about 150,000 proteins. This is such a challenge that finding just half of a protein's structure can be someone's entire PhD. With this new model -- in the span of a few months -- scientists were able to determine the structure of 200,000,000 more, practically every protein known to exist in nature.
 
