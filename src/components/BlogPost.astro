@@ -9,8 +9,6 @@ interface Props {
 
 const { post, canClick = true } = Astro.props;
 const frontmatter = post.data;
-
-const Type = canClick ? "a" : "Fragment";
 ---
 
 <div class="text-pretty">
@@ -22,10 +20,53 @@ const Type = canClick ? "a" : "Fragment";
     >
     {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
   </div>
-  <p>
-    <Type class="text-2xl font-bold underline" href={`/blog/${post.id}/`}
-      >{frontmatter.title}</Type
-    >
+  <p class="text-2xl font-bold" }>
+    {frontmatter.title}
   </p>
   <p>{frontmatter.description}</p>
+  {
+    canClick && (
+      // <div class="flex-ro flex items-center gap-1.5">
+      //   <Link url={`/blog/${post.id}/`}>Read More</Link>
+      //   <svg
+      //     xmlns="http://www.w3.org/2000/svg"
+      //     width="1rem"
+      //     height="1rem"
+      //     viewBox="0 0 24 24"
+      //   >
+      //     <path
+      //       fill="none"
+      //       stroke="currentColor"
+      //       stroke-linecap="round"
+      //       stroke-linejoin="round"
+      //       stroke-width="2"
+      //       d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
+      //     />
+      //   </svg>
+      // </div>
+      <a
+        href={`/blog/${post.id}/`}
+        class="flex flex-row items-center gap-1 underline hover:no-underline"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1rem"
+          height="1rem"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
+          />
+        </svg>
+        <p>read more</p>
+      </a>
+    )
+  }
 </div>
+
+<!-- href={`/blog/${post.id}/`} -->
