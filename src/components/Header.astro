@@ -7,13 +7,10 @@ import ThemeToggle from "./ThemeToggle.astro";
 <header
   class="transition:persist fixed top-0 z-50 flex h-10 w-full items-center bg-white/75 backdrop-blur dark:bg-black/75"
 >
-  <div class="mx-4 flex gap-4">
+  <div class="mx-4 flex grow gap-4">
     <Link url="/">home</Link>
     <Link url="/about">about</Link>
     <Link url="/blog">blog</Link>
-  </div>
-
-  <div class="hidden lg:inline">
     <Greeting
       transition:persist
       transition:persist-props
@@ -31,7 +28,6 @@ import ThemeToggle from "./ThemeToggle.astro";
       ]}
     />
   </div>
-  <div class="grow"></div>
   <ThemeToggle />
   <a
     href="https://github.com/BEnh3N/personal-site"
