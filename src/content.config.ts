@@ -13,6 +13,9 @@ const posts = defineCollection({
 
 const tags = defineCollection({
   loader: file("src/content/tags.toml"),
+  schema: z.object({
+    description: z.string().optional(),
+  }),
 });
 
 export const collections = { posts, tags };

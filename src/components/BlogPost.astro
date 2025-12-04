@@ -12,12 +12,10 @@ const frontmatter = post.data;
 ---
 
 <div class="text-pretty">
-  <div class="flex flex-wrap items-baseline">
-    <span class="mr-2">
-      {frontmatter.pubDate.getUTCMonth() + 1}/{
-        frontmatter.pubDate.getUTCDate()
-      }/{frontmatter.pubDate.getUTCFullYear().toString().slice(2)}</span
-    >
+  <div class="flex flex-wrap gap-x-2 gap-y-0.5">
+    {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
+      frontmatter.pubDate.getUTCFullYear().toString().slice(2)
+    }
     {frontmatter.tags.map((tag) => <Tag tag={tag.id} />)}
   </div>
   <p class="text-2xl font-bold" }>

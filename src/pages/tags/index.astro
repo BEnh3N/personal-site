@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import H from "../../components/H.astro";
+
 const tags = await getCollection("tags");
 ---
 
@@ -10,8 +11,17 @@ const tags = await getCollection("tags");
   <div class="m-5 sm:m-10">
     <div class="mx-auto max-w-prose">
       <H>tags</H>
-      <div class="mt-1 flex flex-wrap">
-        {tags.map((tag) => <Tag tag={tag.id} />)}
+      <div class="mt-1 flex flex-col gap-1">
+        {
+          tags
+            .sort((a, b) => a.id.localeCompare(b.id))
+            .map((tag) => (
+              <span>
+                <Tag tag={tag.id} />
+                {tag.data.description}
+              </span>
+            ))
+        }
       </div>
     </div>
   </div>

@@ -2,9 +2,9 @@
 const { tag } = Astro.props;
 ---
 
-<p>
+<button class="hover:-translate-x-px hover:translate-y-px">
   <a
     href={`/tags/${tag}`}
-    class="mr-2 border border-black px-1 text-nowrap dark:border-white">{tag}</a
+    class="border border-black px-1 text-nowrap dark:border-white">{tag}</a
   >
-</p>
+</button>

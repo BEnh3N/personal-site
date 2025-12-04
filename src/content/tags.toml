@@ -1,7 +1,11 @@
 [ai]
-
-[opinion]
-
-[programming]
+description = "The big thing to talk about for another few months"
 
 [test]
+description = "This is a test of tag descriptions"
+
+[opinion]
+description = "In case you are about what I have to say"
+
+[programming]
+description = ""
