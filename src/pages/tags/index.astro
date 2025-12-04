@@ -4,8 +4,6 @@ import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import H from "../../components/H.astro";
 const tags = await getCollection("tags");
-
-tags.map((tag) => console.log(tag));
 ---
 
 <BaseLayout pageTitle="tag index" }>
