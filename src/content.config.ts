@@ -1,14 +1,18 @@
-import { z, defineCollection } from "astro:content";
-import { glob } from 'astro/loaders';
+import { z, defineCollection, reference } from "astro:content";
+import { file, glob } from "astro/loaders";
 
 const posts = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/posts" }),
-    schema: () => z.object({
-        title: z.string(),
-        pubDate: z.coerce.date(),
-        description: z.string(),
-        tags: z.array(z.string())
-    })
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+    description: z.string(),
+    tags: z.array(reference("tags")),
+  }),
 });
 
-export const collections = { posts };
+const tags = defineCollection({
+  loader: file("src/content/tags.toml"),
+});
+
+export const collections = { posts, tags };

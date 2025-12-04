@@ -1,0 +1,30 @@
+---
+import BlogList from "../../components/BlogList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  const tags = await getCollection("tags");
+
+  return tags.map((tag) => {
+    // filter out posts that have this particular tag
+    const tagPosts = posts.filter((post) =>
+      post.data.tags.some((postTag) => postTag.id === tag.id),
+    );
+    return {
+      params: { id: tag.id },
+      props: { posts: tagPosts },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle=`tag - ${id}`>
+  <div class="m-5 sm:m-10">
+    <BlogList posts={posts} />
+  </div>
+</BaseLayout>

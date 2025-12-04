@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import H from "../../components/H.astro";
-const allPosts = await getCollection("posts");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const tags = await getCollection("tags");
+
+tags.map((tag) => console.log(tag));
 ---
 
 <BaseLayout pageTitle="tag index" }>
@@ -12,7 +13,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
     <div class="mx-auto max-w-prose">
       <H>tags</H>
       <div class="mt-1 flex flex-wrap">
-        {tags.map((tag) => <Tag tag={tag} />)}
+        {tags.map((tag) => <Tag tag={tag.id} />)}
       </div>
     </div>
   </div>
