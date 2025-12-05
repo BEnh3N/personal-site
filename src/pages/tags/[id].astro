@@ -1,5 +1,6 @@
 ---
 import BlogList from "../../components/BlogList.astro";
+import ScrollableContent from "../../components/ScrollableContent.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -24,7 +25,7 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle=`tag - ${id}`>
-  <div class="m-5 sm:m-10">
+  <ScrollableContent>
     <BlogList posts={posts} />
-  </div>
+  </ScrollableContent>
 </BaseLayout>

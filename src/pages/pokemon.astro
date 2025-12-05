@@ -1,104 +1,104 @@
 ---
+import H from "../components/H.astro";
+import ScrollableContent from "../components/ScrollableContent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const MAX_POKEDEX_NUMBER = 1025;
 ---
 
 <BaseLayout pageTitle="olga page">
-  <div class="m-5 sm:m-10">
-    <div class="mx-auto max-w-prose">
-      <h1 class="text-5xl font-bold">olga's secret page</h1>
-      <div class="mt-4 mb-2 flex items-center gap-3">
-        <div
-          class="flex border border-dotted border-black p-1 leading-none dark:border-white"
+  <ScrollableContent>
+    <H>olga's secret page</H>
+    <div class="my-2 flex items-center gap-3">
+      <span
+        class="flex border border-dotted border-black p-1 leading-none dark:border-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1rem"
+          height="1rem"
+          viewBox="0 0 24 24"
+          class="mr-1"
+          ><g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            ><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0"></path><path
+              d="M9 12a3 3 0 1 0 6 0a3 3 0 1 0-6 0m-6 0h6m6 0h6"></path></g
+          ></svg
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1rem"
-            height="1rem"
-            viewBox="0 0 24 24"
-            class="mr-1"
-            ><g
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              ><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0"></path><path
-                d="M9 12a3 3 0 1 0 6 0a3 3 0 1 0-6 0m-6 0h6m6 0h6"></path></g
-            ></svg
-          >
-          <p>#</p>
-          <input
-            id="pokedex-input"
-            type="number"
-            placeholder="587"
-            class="h-4 max-w-[4ch] placeholder:text-gray-500 placeholder:italic focus:outline-none dark:bg-black"
-            autofocus="true"
-            min="1"
-            max={MAX_POKEDEX_NUMBER}
-            data-max={MAX_POKEDEX_NUMBER}
-          />
-        </div>
-        <p class="font-bold" id="name"></p>
-      </div>
-      <p id="output"></p>
+        #
+        <input
+          id="pokedex-input"
+          type="number"
+          placeholder="587"
+          class="h-4 max-w-[4ch] placeholder:text-gray-500 placeholder:italic focus:outline-none dark:bg-black"
+          autofocus="true"
+          min="1"
+          max={MAX_POKEDEX_NUMBER}
+          data-max={MAX_POKEDEX_NUMBER}
+        />
+      </span>
+      <span class="font-bold" id="name"></span>
+    </div>
+    <p id="output"></p>
 
-      <script is:inline define:vars={{ MAX_POKEDEX_NUMBER }} type="module">
-        let input = document.querySelector("input");
-        let output = document.getElementById("output");
-        let name = document.getElementById("name");
+    <script is:inline define:vars={{ MAX_POKEDEX_NUMBER }} type="module">
+      let input = document.querySelector("input");
+      let output = document.getElementById("output");
+      let name = document.getElementById("name");
 
-        // check if input, output, and name elements exist
-        if (!input || !output || !name) {
-          throw new Error("Element of page not found");
+      // check if input, output, and name elements exist
+      if (!input || !output || !name) {
+        throw new Error("Element of page not found");
+      }
+
+      let update_name = (num) => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
+          .then((res) => res.json())
+          .then((data) => {
+            name.innerText = data.name;
+          });
+      };
+
+      let update_text = (num) => {
+        // check if input is a number and greater than 0
+        if (isNaN(num) || num < 1) {
+          output.innerText = "enter pokedex number";
+          output.classList.add("italic", "text-gray-500");
+          name.innerText = "";
+          return;
         }
 
-        let update_name = (num) => {
-          fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
-            .then((res) => res.json())
-            .then((data) => {
-              name.innerText = data.name;
-            });
-        };
+        // check if input is greater than max pokedex number and clamp it if necessary
+        if (num > MAX_POKEDEX_NUMBER) {
+          num = MAX_POKEDEX_NUMBER;
+          input.value = MAX_POKEDEX_NUMBER.toString();
+        }
 
-        let update_text = (num) => {
-          // check if input is a number and greater than 0
-          if (isNaN(num) || num < 1) {
-            output.innerText = "enter pokedex number";
-            output.classList.add("italic", "text-gray-500");
-            name.innerText = "";
-            return;
-          }
+        output.classList.remove("italic", "text-gray-500");
 
-          // check if input is greater than max pokedex number and clamp it if necessary
-          if (num > MAX_POKEDEX_NUMBER) {
-            num = MAX_POKEDEX_NUMBER;
-            input.value = MAX_POKEDEX_NUMBER.toString();
-          }
+        update_name(num);
 
-          output.classList.remove("italic", "text-gray-500");
+        num -= 1;
 
-          update_name(num);
+        let pages_flipped = Math.floor(num / 18);
+        let slot_number = (num % 18) + 1;
+        let output_text = `flip ${pages_flipped} pages and put in slot ${slot_number}`;
+        if (slot_number > 9) {
+          output_text += `\n(back slot ${slot_number - 9})`;
+        }
+        output.innerText = output_text;
+      };
 
-          num -= 1;
+      update_text(0);
 
-          let pages_flipped = Math.floor(num / 18);
-          let slot_number = (num % 18) + 1;
-          let output_text = `flip ${pages_flipped} pages and put in slot ${slot_number}`;
-          if (slot_number > 9) {
-            output_text += `\n(back slot ${slot_number - 9})`;
-          }
-          output.innerText = output_text;
-        };
-
-        update_text(0);
-
-        input.addEventListener("input", (_) => {
-          let pokedex_number = parseInt(input.value);
-          update_text(pokedex_number);
-        });
-      </script>
-    </div>
-  </div>
+      input.addEventListener("input", (_) => {
+        let pokedex_number = parseInt(input.value);
+        update_text(pokedex_number);
+      });
+    </script>
+  </ScrollableContent>
 </BaseLayout>

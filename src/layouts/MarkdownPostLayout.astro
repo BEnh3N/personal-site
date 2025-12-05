@@ -2,6 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
+import ScrollableContent from "../components/ScrollableContent.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -11,17 +12,13 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout pageTitle={post.data.title} description={post.data.description}>
-  <div class="m-5 sm:m-10">
-    <div class="mx-auto max-w-prose">
-      <BlogPost post={post} canClick={false} />
+  <ScrollableContent>
+    <BlogPost post={post} canClick={false} />
+    <div
+      class="prose prose-neutral dark:prose-invert prose-hr:my-5 sm:prose-hr:my-10 font-sans"
+    >
+      <hr />
+      <slot />
     </div>
-    <div class="mx-auto max-w-prose">
-      <div
-        class="prose prose-neutral dark:prose-invert prose-hr:my-5 sm:prose-hr:my-10 font-sans"
-      >
-        <hr />
-        <slot />
-      </div>
-    </div>
-  </div>
+  </ScrollableContent>
 </BaseLayout>

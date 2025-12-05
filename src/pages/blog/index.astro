@@ -2,11 +2,12 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogList from "../../components/BlogList.astro";
+import ScrollableContent from "../../components/ScrollableContent.astro";
 const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout pageTitle="blog">
-  <div class="m-5 sm:m-10">
+  <ScrollableContent>
     <BlogList posts={allPosts} />
-  </div>
+  </ScrollableContent>
 </BaseLayout>

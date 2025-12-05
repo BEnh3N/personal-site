@@ -1,66 +1,65 @@
 ---
 import H from "../components/H.astro";
 import Link from "../components/Link.astro";
+import ScrollableContent from "../components/ScrollableContent.astro";
 import Social from "../components/Social.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="about me">
-  <div class="m-5 sm:m-10">
-    <div class="mx-auto max-w-prose">
-      <H>about me</H>
-      <p class="mb-8 font-sans">
-        Hello! I'm Bennett, and I'm a student from Las Vegas, Nevada who's been
-        interested in computers and technology all my life, as well as music,
-        film, photography, camping, and video games.
-        <br />
-        I am currently attending Oregon State University getting a degree in Electrical
-        and Computer Engineering. I work in OSU's <Link
-          url="https://magnetics.oregonstate.edu/"
-          >Applied Magnetics Laboratory</Link
-        > simulating micromagnetic spin waves, and I am also active in OSU's <Link
-          url="https://www.instagram.com/filmclubatosu/"
-          >Orange & Black Film Club</Link
-        > and <Link url="https://www.instagram.com/osuphotosociety/"
-          >Photography Society</Link
-        >.
-        <br />
-        I like to spend my free time listening to music (Radiohead fanboy over here),
-        practicing guitar, playing video games, reading, watching movies (go see Baby
-        Driver), and doing generally outdoorsy things.
-      </p>
+  <ScrollableContent>
+    <H>about me</H>
+    <p class="mb-8 font-sans">
+      Hello! I'm Bennett, and I'm a student from Las Vegas, Nevada who's been
+      interested in computers and technology all my life, as well as music,
+      film, photography, camping, and video games.
+      <br />
+      I am currently attending Oregon State University getting a degree in Electrical
+      and Computer Engineering. I work in OSU's <Link
+        url="https://magnetics.oregonstate.edu/"
+        >Applied Magnetics Laboratory</Link
+      > simulating micromagnetic spin waves, and I am also active in OSU's <Link
+        url="https://www.instagram.com/filmclubatosu/"
+        >Orange & Black Film Club</Link
+      > and <Link url="https://www.instagram.com/osuphotosociety/"
+        >Photography Society</Link
+      >.
+      <br />
+      I like to spend my free time listening to music (Radiohead fanboy over here),
+      practicing guitar, playing video games, reading, watching movies (go see Baby
+      Driver), and doing generally outdoorsy things.
+    </p>
 
-      <H>platforms</H>
-      <div class="mt-1 mb-8 flex flex-wrap gap-2">
-        <Social name="github" link="github.com/BEnh3N" />
-        <Social name="bluesky" link="bsky.app/profile/benh3n.com" />
-        <Social name="youtube" link="youtube.com/@BEnh3N" />
-        <Social name="linkedin" link="linkedin.com/in/bennett-pohlmann/" />
-        <Social name="instagram" link="instagram.com/toaster6161/" />
-        <Social name="last.fm" link="last.fm/user/BEnh3N" />
-        <Social name="twitter" link="x.com/BEnh3N" />
-      </div>
-
-      <H>projects</H>
-      <p class="mb-8 font-sans">to be filled in...</p>
-
-      <H>this site</H>
-      <p class="font-sans">
-        This site is mainly to be used as a personal portfolio of my work and a
-        place to
-        <Link url="/blog">write about my experiences</Link> with technology, life,
-        and maybe even both at the same time.
-        <br />
-        Big inspiration for this site came from
-        <Link url="https://basicappleguy.com">Basic Apple Guy</Link>,
-        <Link url="https://jamesbvaughan.com">James Vaughan</Link>, and
-        <Link url="https://cobalt.tools">cobalt</Link>. The typing effect on the
-        home screen was ripped directly from
-        <Link url="https://bun.sh">Bun's homepage</Link>.
-        <br />
-        One day, I'll write a blog post detailing more about the technology behind
-        this site and my arduous journey of creating it.
-      </p>
+    <H>platforms</H>
+    <div class="mt-1 mb-8 flex flex-wrap gap-2">
+      <Social name="github" link="github.com/BEnh3N" />
+      <Social name="bluesky" link="bsky.app/profile/benh3n.com" />
+      <Social name="youtube" link="youtube.com/@BEnh3N" />
+      <Social name="linkedin" link="linkedin.com/in/bennett-pohlmann/" />
+      <Social name="instagram" link="instagram.com/toaster6161/" />
+      <Social name="last.fm" link="last.fm/user/BEnh3N" />
+      <Social name="twitter" link="x.com/BEnh3N" />
     </div>
-  </div>
+
+    <H>projects</H>
+    <p class="mb-8 font-sans">to be filled in...</p>
+
+    <H>this site</H>
+    <p class="font-sans">
+      This site is mainly to be used as a personal portfolio of my work and a
+      place to
+      <Link url="/blog">write about my experiences</Link> with technology, life, and
+      maybe even both at the same time.
+      <br />
+      Big inspiration for this site came from
+      <Link url="https://basicappleguy.com">Basic Apple Guy</Link>,
+      <Link url="https://jamesbvaughan.com">James Vaughan</Link>, and
+      <Link url="https://cobalt.tools">cobalt</Link>. The typing effect on the
+      home screen was ripped directly from
+      <Link url="https://bun.sh">Bun's homepage</Link>.
+      <br />
+      One day, I'll write a blog post detailing more about the technology behind this
+      site and my arduous journey of creating it.
+    </p>
+  </ScrollableContent>
 </BaseLayout>
