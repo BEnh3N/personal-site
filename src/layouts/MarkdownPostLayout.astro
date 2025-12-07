@@ -12,6 +12,7 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout pageTitle={post.data.title} description={post.data.description}>
+  <meta name="fediverse:creator" content="@benh3n@mastodon.social" />
   <ScrollableContent>
     <BlogPost post={post} canClick={false} />
     <div
