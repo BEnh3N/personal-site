@@ -29,10 +29,8 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body class="font-mono dark:bg-black dark:text-white dark:scheme-dark">
+  <body class="mt-10 font-mono dark:bg-black dark:text-white dark:scheme-dark">
     <Header />
-    <div class="mt-10 h-[calc(100dvh-var(--spacing)*10)] overflow-y-scroll">
-      <slot />
-    </div>
+    <slot />
   </body>
 </html>
