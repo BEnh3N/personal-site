@@ -4,7 +4,8 @@
 /* add custom fonts */
 @theme {
   --font-mono: "Berkeley Mono", ui-monospace, monospace;
-  --font-sans: "Inter Variable", sans-serif;
+  --font-sans: "Inter Variable", "Inter", sans-serif;
+  --font-sans--font-feature-settings: "liga", "calt";
 }
 
 /* enable dark mode switching with css selector */
