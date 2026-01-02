@@ -3,8 +3,10 @@
 
 /* add custom fonts */
 @theme {
-  --font-mono: "Berkeley Mono", ui-monospace, monospace;
+  --font-mono: "Monaspace Neon", ui-monospace, monospace;
+  --font-mono--font-feature-settings: "liga", "calt", "ss01", "ss02";
   --font-sans: "Inter Variable", sans-serif;
+  --font-sans--font-feature-settings: "liga", "calt";
 }
 
 /* enable dark mode switching with css selector */
@@ -28,40 +30,11 @@ button,
   cursor: pointer;
 }
 
-@layer base {
-  @font-face {
-    font-family: "Berkeley Mono";
-    font-display: swap;
-    src:
-      url("/fonts/BerkeleyMono-Regular.woff2") format("woff2"),
-      url("/fonts/BerkeleyMono-Regular.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Berkeley Mono";
-    font-style: italic;
-    font-display: swap;
-    src:
-      url("/fonts/BerkeleyMono-Italic.woff2") format("woff2"),
-      url("/fonts/BerkeleyMono-Italic.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Berkeley Mono";
-    font-weight: bold;
-    font-display: swap;
-    src:
-      url("/fonts/BerkeleyMono-Bold.woff2") format("woff2"),
-      url("/fonts/BerkeleyMono-Bold.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Berkeley Mono";
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-    src:
-      url("/fonts/BerkeleyMono-BoldItalic.woff2") format("woff2"),
-      url("/fonts/BerkeleyMono-BoldItalic.woff") format("woff");
-  }
+/* v3.0.1 */
+@font-face {
+  font-family: "Monaspace Neon";
+  font-display: swap;
+  src:
+    url("/fonts/Monaspace Neon Var.woff2") format("woff2"),
+    url("/fonts/Monaspace Neon Var.woff") format("woff");
 }
