@@ -3,7 +3,7 @@
 
 /* add custom fonts */
 @theme {
-  --font-mono: "Berkeley Mono", ui-monospace, monospace;
+  --font-mono: "Monaspace Neon", "Berkeley Mono", ui-monospace, monospace;
   --font-sans: "Inter Variable", sans-serif;
 }
 
