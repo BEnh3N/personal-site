@@ -15,8 +15,18 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preconnect" href="https://rsms.me/" /> -->
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link
+      rel="preload"
+      href="https://rsms.me/inter/inter.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://rsms.me/inter/inter.css"
+      /></noscript
+    >
 
     <link
       rel="alternate"
