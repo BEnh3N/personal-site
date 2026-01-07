@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 
 import "../styles/global.css";
+import "@fontsource-variable/inter";
 
 const { pageTitle, description = "Bennett Pohlmann's personal page" } =
   Astro.props;
@@ -14,19 +15,6 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-
-    <link
-      rel="preload"
-      href="https://rsms.me/inter/inter.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://rsms.me/inter/inter.css"
-      /></noscript
-    >
 
     <link
       rel="alternate"
