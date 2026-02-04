@@ -2,10 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 /* add custom fonts */
-@theme {
+@theme inline {
   --font-mono: "Berkeley Mono", ui-monospace, monospace;
-  --font-sans: "Inter Variable", "Inter", sans-serif;
-  --font-sans--font-feature-settings: "liga", "calt";
 }
 
 /* enable dark mode switching with css selector */

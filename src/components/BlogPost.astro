@@ -11,7 +11,7 @@ const { post, canClick = true } = Astro.props;
 const frontmatter = post.data;
 ---
 
-<div class="text-pretty">
+<div class="font-mono text-pretty">
   <div class="flex flex-wrap gap-x-2">
     {frontmatter.pubDate.getUTCMonth() + 1}/{frontmatter.pubDate.getUTCDate()}/{
       frontmatter.pubDate.getUTCFullYear().toString().slice(2)

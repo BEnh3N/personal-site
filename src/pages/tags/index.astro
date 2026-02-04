@@ -11,17 +11,19 @@ const tags = await getCollection("tags");
 <BaseLayout pageTitle="tag index" }>
   <ScrollableContent>
     <H>tags</H>
-    <ul class="mt-1 flex flex-col gap-1">
+    <table class="mt-1 flex flex-col gap-1">
       {
         tags
           .sort((a, b) => a.id.localeCompare(b.id))
           .map((tag) => (
-            <li>
-              <Tag tag={tag.id} />
-              {tag.data.description}
-            </li>
+            <tr>
+              <td class="border p-1">
+                <Tag tag={tag.id} />{" "}
+              </td>
+              <td class="w-full border p-1">{tag.data.description}</td>
+            </tr>
           ))
       }
-    </ul>
+    </table>
   </ScrollableContent>
 </BaseLayout>

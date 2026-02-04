@@ -3,7 +3,6 @@ import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 
 import "../styles/global.css";
-import "@fontsource-variable/inter";
 
 const { pageTitle, description = "Bennett Pohlmann's personal page" } =
   Astro.props;
@@ -28,7 +27,7 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body class="mt-10 font-mono dark:bg-black dark:text-white dark:scheme-dark">
+  <body class="mt-10 dark:bg-black dark:text-white dark:scheme-dark">
     <Header />
     <slot />
   </body>
