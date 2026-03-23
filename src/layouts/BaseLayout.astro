@@ -27,7 +27,10 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body class="mt-10 dark:bg-black dark:text-white dark:scheme-dark">
+  <body
+    class="mt-10 dark:bg-black dark:text-white dark:scheme-dark"
+    role="main"
+  >
     <Header />
     <slot />
   </body>
