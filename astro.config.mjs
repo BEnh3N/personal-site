@@ -7,6 +7,9 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://benh3n.com",
+  prefetch: {
+    defaultStrategy: "viewport",
+  },
   integrations: [preact(), mdx()],
 
   vite: {
