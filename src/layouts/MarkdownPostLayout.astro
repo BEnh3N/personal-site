@@ -11,8 +11,11 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<BaseLayout pageTitle={post.data.title} description={post.data.description}>
-  <meta name="fediverse:creator" content="@benh3n@mastodon.social" />
+<BaseLayout
+  pageTitle={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+>
   <ScrollableContent>
     <BlogPost post={post} canClick={false} />
     <div
