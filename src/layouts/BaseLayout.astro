@@ -24,6 +24,12 @@ const { pageTitle, description = "Bennett Pohlmann's personal page" } =
     <link href="https://mastodon.social/@benh3n" rel="me" />
 
     <title>{pageTitle}</title>
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:description" content={description} />
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
