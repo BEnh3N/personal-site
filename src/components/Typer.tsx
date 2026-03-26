@@ -12,7 +12,7 @@ export default function Typer({ speed = 40, delay = 2300 }) {
   const [cursor, setCursor] = useState(true);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
 
     const animate = async () => {
       interval = setInterval(() => {
