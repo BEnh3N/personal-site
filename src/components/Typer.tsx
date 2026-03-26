@@ -1,48 +1,43 @@
-import { useEffect, useState } from "preact/hooks";
+import { createSignal, onMount } from "solid-js";
 
 const options = ["programmer", "photographer", "student", "musician", "gamer"];
-
-const sleep = async (time: number) => {
-  await new Promise((r) => setTimeout(r, time));
-};
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export default function Typer({ speed = 40, delay = 2300 }) {
-  const [index, setIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(options[0]);
-  const [cursor, setCursor] = useState(true);
+  const [index, setIndex] = createSignal(0);
+  const [displayText, setDisplayText] = createSignal(options[0]);
+  const [cursor, setCursor] = createSignal(true);
 
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-
-    const animate = async () => {
-      interval = setInterval(() => {
-        setCursor((cursor) => !cursor);
+  onMount(() => {
+    const animate = async (d: number) => {
+      const interval = setInterval(() => {
+        setCursor(!cursor());
       }, 500);
 
-      await sleep(delay);
+      await sleep(d);
 
       clearInterval(interval);
       setCursor(true);
 
-      const nextIndex = (index + 1) % options.length;
-      const word = options[index] || "";
-      const nextWord = options[nextIndex] || "";
-
-      for (let i = word.length; i >= 0; i--) {
-        setDisplayText(word.substring(0, i));
+      const word = options[index()] || "";
+      for (let j = word.length; j >= 0; j--) {
+        setDisplayText(word.substring(0, j));
         await sleep(speed);
       }
 
-      for (let i = 0; i <= nextWord.length; i++) {
-        setDisplayText(nextWord.substring(0, i));
+      const nextIndex = (index() + 1) % options.length;
+      const nextWord = options[nextIndex] || "";
+      for (let j = 0; j <= nextWord.length; j++) {
+        setDisplayText(nextWord.substring(0, j));
         await sleep(speed);
       }
 
       setIndex(nextIndex);
+      animate(delay);
     };
 
-    animate();
-  }, [index]);
+    animate(3000);
+  });
 
-  return <span>{displayText + (cursor ? "⎸" : "")}</span>;
+  return <span>{displayText() + (cursor() ? "⎸" : "")}</span>;
 }

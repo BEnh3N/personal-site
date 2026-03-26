@@ -2,19 +2,6 @@
 import Greeting from "./Greeting";
 import Link from "./Link.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-
-const m = [
-  "experience the greatest website to ever exist",
-  "web dev is way too hard",
-  "help",
-  '"if you wait until the last minute, it only takes a minute to do"',
-  "according to all known laws of aviation...",
-  "you got games on your phone?",
-  "you can't just say perchance",
-  "ai can't take my job because I don't have one",
-  "how strange it is to be anything at all...",
-];
-const i = Math.floor(Math.random() * m.length);
 ---
 
 <header
@@ -25,7 +12,7 @@ const i = Math.floor(Math.random() * m.length);
     <Link url="/">home</Link>
     <Link url="/about">about</Link>
     <Link url="/blog">blog</Link>
-    <Greeting client:load messages={m} initialValue={i} />
+    <Greeting client:load />
   </div>
   <ThemeToggle />
   <a
