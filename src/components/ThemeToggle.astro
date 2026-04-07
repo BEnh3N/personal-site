@@ -34,8 +34,9 @@
 
 <script is:inline>
   const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+    const localStorageTheme = localStorage?.getItem("theme") ?? "";
+    if (["dark", "light"].includes(localStorageTheme)) {
+      return localStorageTheme;
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
@@ -57,30 +58,9 @@
 
     const isDark = element.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-
-    console.log(localStorage.getItem("theme"));
   };
 
-  const setDarkMode = () => {
-    const theme = localStorage.getItem("theme");
-    const element = document.documentElement;
-    if (theme === "dark") {
-      element.classList.add("dark");
-    } else {
-      element.classList.remove("dark");
-    }
-  };
-
-  const init = () => {
-    document
-      .getElementById("themeToggle")
-      .addEventListener("click", handleToggleClick);
-  };
-
-  init();
-
-  document.addEventListener("astro:after-swap", () => {
-    setDarkMode();
-    init();
-  });
+  document
+    .getElementById("themeToggle")
+    ?.addEventListener("click", handleToggleClick);
 </script>

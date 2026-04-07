@@ -2,58 +2,57 @@
 const options = ["programmer", "photographer", "student", "musician", "gamer"];
 ---
 
-<span id="typer">{options[0]}</span><span id="cursor">⎸</span>
+<span id="typer" data-options={options}>{options[0]}</span><span id="cursor"
+  >⎸</span
+>
 
-<script is:inline type="module" define:vars={{ options }}>
-  function sleep(ms) {
+<script>
+  function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const typer = document.getElementById("typer");
-  const cursor = document.getElementById("cursor");
+  const CHAR_DELAY = 40;
+  const WORD_DELAY = 2300;
 
-  let handle;
-  function startBlink() {
-    handle = setInterval(() => {
+  const typer = document.getElementById("typer")!;
+  const cursor = document.getElementById("cursor")!;
+
+  const options = typer.dataset.options!.split(",");
+  let index = 0;
+
+  let animate = async (s: number) => {
+    // start blinking the cursor
+    let handle = setInterval(() => {
       cursor.style.visibility =
         cursor.style.visibility === "hidden" ? "visible" : "hidden";
     }, 500);
-  }
-  function stopBlink() {
-    cursor.style.visibility = "visible";
+
+    // wait the specified time
+    await sleep(s);
+
+    // stop blinking the cursor
     clearInterval(handle);
-  }
+    cursor.style.visibility = "visible";
 
-  async function replaceTyper() {
-    const current = typer.innerText;
-    const next = options[(options.indexOf(current) + 1) % options.length];
+    const word = options[index]!;
+    const nextIndex = (index + 1) % options.length;
+    const nextWord = options[nextIndex]!;
 
-    const CHAR_DELAY = 40;
-    const WORD_DELAY = 2300;
-
-    stopBlink();
-
-    while (typer.innerText.length > 0) {
-      typer.innerText = typer.innerText.slice(0, -1);
-      // wait
+    // delete current word
+    for (let i = word.length; i >= 0; --i) {
+      typer.innerText = word.substring(0, i);
       await sleep(CHAR_DELAY);
     }
 
-    // type in next
-    for (let i = 0; i < next.length; i++) {
-      typer.innerText += next[i];
+    // type in next word
+    for (let i = 0; i <= nextWord.length; ++i) {
+      typer.innerText = nextWord.substring(0, i);
       await sleep(CHAR_DELAY);
     }
 
-    startBlink();
+    index = nextIndex;
+    animate(WORD_DELAY);
+  };
 
-    // wait
-    await sleep(WORD_DELAY);
-    replaceTyper();
-  }
-
-  startBlink();
-  setTimeout(() => {
-    replaceTyper();
-  }, 3000);
+  animate(3000);
 </script>
