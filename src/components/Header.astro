@@ -1,5 +1,5 @@
 ---
-import Greeting from "./Greeting.astro";
+import Greeting from "./Greeting.tsx";
 import Link from "./Link.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
@@ -12,7 +12,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     <Link url="/">home</Link>
     <Link url="/about">about</Link>
     <Link url="/blog">blog</Link>
-    <Greeting />
+    <Greeting client:load />
   </div>
   <ThemeToggle />
   <a
@@ -21,6 +21,6 @@ import ThemeToggle from "./ThemeToggle.astro";
     target="_blank"
     rel="noopener noreferrer"
   >
-    v4.1.0</a
+    v4.3.2</a
   >
 </header>

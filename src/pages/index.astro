@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ASCII from "../components/ASCII.astro";
-import Typer from "../components/Typer.astro";
+import Typer from "../components/Typer.tsx";
 const pageTitle = "bennett pohlmann";
 ---
 
@@ -15,7 +15,7 @@ const pageTitle = "bennett pohlmann";
     <p>
       hello, my name is<br />
       <span class="text-5xl font-bold">bennett</span>
-      <br />i'm a <Typer />
+      <br />i'm a <Typer client:load />
     </p>
   </div>
 </BaseLayout>

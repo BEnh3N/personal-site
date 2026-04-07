@@ -47,6 +47,33 @@ const {
     <meta property="og:description" content={description} />
     <meta name="description" content={description} />
     <ClientRouter />
+
+    <script is:inline>
+      const theme = (() => {
+        const localStorageTheme = localStorage?.getItem("theme") ?? "";
+        if (["dark", "light"].includes(localStorageTheme)) {
+          return localStorageTheme;
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      window.localStorage.setItem("theme", theme);
+
+      const setDarkMode = () => {
+        let theme = localStorage?.getItem("theme");
+        if (theme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.add("dark");
+        }
+      };
+
+      setDarkMode();
+      document.addEventListener("astro:after-swap", setDarkMode);
+    </script>
   </head>
   <body
     class="mt-10 dark:bg-black dark:text-white dark:scheme-dark"
