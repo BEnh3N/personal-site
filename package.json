@@ -13,15 +13,13 @@
     "@astrojs/check": "0.9.8",
     "@astrojs/mdx": "5.0.3",
     "@astrojs/rss": "4.0.18",
-    "@astrojs/solid-js": "^6.0.1",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "^4.2.2",
     "astro": "6.1.4",
-    "solid-js": "^1.9.12",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14"
   },
