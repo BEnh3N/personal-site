@@ -63,7 +63,7 @@ const {
       window.localStorage.setItem("theme", theme);
 
       const setDarkMode = () => {
-        let theme = localStorage?.getItem("theme");
+        const theme = localStorage?.getItem("theme");
         if (theme === "light") {
           document.documentElement.classList.remove("dark");
         } else {
