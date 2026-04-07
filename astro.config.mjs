@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 
-import solidJs from "@astrojs/solid-js";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
@@ -10,7 +9,7 @@ export default defineConfig({
   prefetch: {
     defaultStrategy: "viewport",
   },
-  integrations: [solidJs(), mdx()],
+  integrations: [mdx()],
 
   vite: {
     plugins: [tailwindcss()],
