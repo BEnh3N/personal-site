@@ -1,6 +1,13 @@
 import { createSignal, onMount } from "solid-js";
 
-const options = ["programmer", "photographer", "student", "musician", "gamer"];
+const options = [
+  "researcher",
+  "programmer",
+  "photographer",
+  "student",
+  "musician",
+  "gamer",
+];
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export default function Typer({ speed = 40, delay = 2300 }) {
