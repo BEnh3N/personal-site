@@ -1,7 +1,7 @@
 import { createSignal, onMount } from "solid-js";
 
 const options = [
-  "researcher",
+  // "researcher",
   "programmer",
   "photographer",
   "student",
