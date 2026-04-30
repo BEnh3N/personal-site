@@ -12,10 +12,11 @@ const messages = [
   "how strange it is to be anything at all...",
 ];
 
+const randIndex = () => {
+  return Math.floor(Math.random() * messages.length);
+};
+
 export default function Greeting() {
-  const randIndex = () => {
-    return Math.floor(Math.random() * messages.length);
-  };
   const [index, setIndex] = createSignal(randIndex());
 
   const updateMessage = () => {
