@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import Tag from "../../components/Tag.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import H from "../../components/H.astro";
-import ScrollableContent from "../../components/ScrollableContent.astro";
+import Tag from "@components/Tag.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import H from "@components/H.astro";
+import ScrollableContent from "@components/ScrollableContent.astro";
 
 const tags = await getCollection("tags");
 ---

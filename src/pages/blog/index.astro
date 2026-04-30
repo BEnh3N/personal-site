@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogList from "../../components/BlogList.astro";
-import ScrollableContent from "../../components/ScrollableContent.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BlogList from "@components/BlogList.astro";
+import ScrollableContent from "@components/ScrollableContent.astro";
 const allPosts = await getCollection("posts");
 ---
 
